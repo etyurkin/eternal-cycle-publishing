@@ -1,0 +1,8 @@
+*.md
+!README.md
+!README.*.md
+!CONTRIBUTING.md
+!EDITION_POLICY.md
+!CHANGELOG.md
+.DS_Store
+__pycache__/
