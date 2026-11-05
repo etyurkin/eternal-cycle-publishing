@@ -1,0 +1,652 @@
+[
+  {
+    "id": "dot-above-the-sand",
+    "language": "en",
+    "title": "A Dot Above the Sand",
+    "note": "Café de la Luna · Kids’ Series · Book I",
+    "category": "children",
+    "cover": "assets/covers/dot-above-the-sand-en.jpg",
+    "cover_source": {
+      "epub": "books/children/dot-above-the-sand/A Dot Above the Sand.epub",
+      "member": "EPUB/images/cover.png",
+      "sha256": "0b98f3469c7b6bae1677b9833c7870d1f9e8f0bdb0210c0d72e61c26ed930bfe"
+    },
+    "files": {
+      "pdf": "books/children/dot-above-the-sand/A Dot Above the Sand.pdf",
+      "epub": "books/children/dot-above-the-sand/A Dot Above the Sand.epub",
+      "zip": "books/children/dot-above-the-sand/A Dot Above the Sand.zip"
+    },
+    "description": "The wind lifts a tiny dot above a world divided by fences. From up there, she discovers that the familiar “paper” is a beach, and the dots are grains of sand.",
+    "description_source": {
+      "epub": "books/children/dot-above-the-sand/A Dot Above the Sand.epub",
+      "chapters": [
+        "EPUB/text/ch01.xhtml",
+        "EPUB/text/ch02.xhtml",
+        "EPUB/text/ch03.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "dot-above-the-sand",
+    "language": "ru",
+    "title": "Точка над песком",
+    "note": "Café de la Luna · Детская серия · Книга I",
+    "category": "children",
+    "cover": "assets/covers/dot-above-the-sand-ru.jpg",
+    "cover_source": {
+      "epub": "books/children/dot-above-the-sand/Точка над песком.epub",
+      "member": "EPUB/images/cover.png",
+      "sha256": "c24eb157089ce32b832b1332b70d548cf31ef36efd4f80e2a33e38af950c8ff6"
+    },
+    "files": {
+      "pdf": "books/children/dot-above-the-sand/Точка над песком.pdf",
+      "epub": "books/children/dot-above-the-sand/Точка над песком.epub",
+      "zip": "books/children/dot-above-the-sand/Точка над песком.zip"
+    },
+    "description": "Ветер поднимает крошечную точку над миром заборов. С высоты она замечает, что знакомая «бумага» — песчаный берег, а точки вокруг неё — песчинки.",
+    "description_source": {
+      "epub": "books/children/dot-above-the-sand/Точка над песком.epub",
+      "chapters": [
+        "EPUB/text/ch01.xhtml",
+        "EPUB/text/ch02.xhtml",
+        "EPUB/text/ch03.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "in-the-beginning-there-was-a-question",
+    "language": "en",
+    "title": "In the Beginning There Was a Question",
+    "note": "Café de la Luna · Kids’ Series · Book II",
+    "category": "children",
+    "cover": "assets/covers/in-the-beginning-there-was-a-question-en.jpg",
+    "cover_source": {
+      "epub": "books/children/in-the-beginning-there-was-a-question/In the Beginning There Was a Question.epub",
+      "member": "EPUB/images/cover.png",
+      "sha256": "0eb72ed2ab3e1a72ed17a0db97a90202faab92433300544957617f330dd6b625"
+    },
+    "files": {
+      "pdf": "books/children/in-the-beginning-there-was-a-question/In the Beginning There Was a Question.pdf",
+      "epub": "books/children/in-the-beginning-there-was-a-question/In the Beginning There Was a Question.epub",
+      "zip": "books/children/in-the-beginning-there-was-a-question/In the Beginning There Was a Question.zip"
+    },
+    "description": "Lisa takes a clock apart to look for yesterday and collects questions that have no answers yet. A fairy tale about curiosity, experiments, and the habit of asking why.",
+    "description_source": {
+      "epub": "books/children/in-the-beginning-there-was-a-question/In the Beginning There Was a Question.epub",
+      "chapters": [
+        "EPUB/text/section-00.xhtml",
+        "EPUB/text/section-01.xhtml",
+        "EPUB/text/section-02.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "in-the-beginning-there-was-a-question",
+    "language": "ru",
+    "title": "Вначале был Вопрос",
+    "note": "Café de la Luna · Детская серия · Книга II",
+    "category": "children",
+    "cover": "assets/covers/in-the-beginning-there-was-a-question-ru.jpg",
+    "cover_source": {
+      "epub": "books/children/in-the-beginning-there-was-a-question/Вначале был Вопрос.epub",
+      "member": "EPUB/images/cover.png",
+      "sha256": "a343d623f1092158a0e0ddcfd81c972dea28d3ed24784c4b65d31f8eeac15ea2"
+    },
+    "files": {
+      "pdf": "books/children/in-the-beginning-there-was-a-question/Вначале был Вопрос.pdf",
+      "epub": "books/children/in-the-beginning-there-was-a-question/Вначале был Вопрос.epub",
+      "zip": "books/children/in-the-beginning-there-was-a-question/Вначале был Вопрос.zip"
+    },
+    "description": "Лиза разбирает часы в поисках вчерашнего дня и собирает вопросы, на которые пока нет ответа. Сказка о любопытстве, опытах и привычке спрашивать «почему?».",
+    "description_source": {
+      "epub": "books/children/in-the-beginning-there-was-a-question/Вначале был Вопрос.epub",
+      "chapters": [
+        "EPUB/text/section-00.xhtml",
+        "EPUB/text/section-01.xhtml",
+        "EPUB/text/section-02.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "in-the-margins-of-the-stars",
+    "language": "en",
+    "title": "In the Margins of the Stars",
+    "note": "Café de la Luna · Kids’ Series · Book III",
+    "category": "children",
+    "cover": "assets/covers/in-the-margins-of-the-stars-en.jpg",
+    "cover_source": {
+      "epub": "books/children/in-the-margins-of-the-stars/In the Margins of the Stars.epub",
+      "member": "EPUB/images/cover.png",
+      "sha256": "ecfa6c1b152f13d8c4e803cf57adca9a9f7278342d6aa81a1395793645505e5c"
+    },
+    "files": {
+      "pdf": "books/children/in-the-margins-of-the-stars/In the Margins of the Stars.pdf",
+      "epub": "books/children/in-the-margins-of-the-stars/In the Margins of the Stars.epub",
+      "zip": "books/children/in-the-margins-of-the-stars/In the Margins of the Stars.zip"
+    },
+    "description": "Slava and Lisa meet at university lectures. Among equations, questions, and notes in the margins, a story of paying attention to another person begins.",
+    "description_source": {
+      "epub": "books/children/in-the-margins-of-the-stars/In the Margins of the Stars.epub",
+      "chapters": [
+        "EPUB/text/section-1.xhtml",
+        "EPUB/text/section-10.xhtml",
+        "EPUB/text/section-11.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "in-the-margins-of-the-stars",
+    "language": "ru",
+    "title": "На полях звёзд",
+    "note": "Café de la Luna · Детская серия · Книга III",
+    "category": "children",
+    "cover": "assets/covers/in-the-margins-of-the-stars-ru.jpg",
+    "cover_source": {
+      "epub": "books/children/in-the-margins-of-the-stars/На полях звёзд.epub",
+      "member": "EPUB/images/cover.png",
+      "sha256": "ff1f45dffd437ba7198999a19ce2a2df05eff483a27d9e80a5f88929fce2af20"
+    },
+    "files": {
+      "pdf": "books/children/in-the-margins-of-the-stars/На полях звёзд.pdf",
+      "epub": "books/children/in-the-margins-of-the-stars/На полях звёзд.epub",
+      "zip": "books/children/in-the-margins-of-the-stars/На полях звёзд.zip"
+    },
+    "description": "Слава и Лиза встречаются на университетских лекциях. Между формулами, вопросами и записями на полях появляется история внимания к другому человеку.",
+    "description_source": {
+      "epub": "books/children/in-the-margins-of-the-stars/На полях звёзд.epub",
+      "chapters": [
+        "EPUB/text/section-1.xhtml",
+        "EPUB/text/section-10.xhtml",
+        "EPUB/text/section-11.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "seven-kings-vol-1",
+    "language": "en",
+    "title": "Seven Kings · Beyond the Screen",
+    "note": "Café de la Luna · Kids’ Series · Book IV · Volume 1",
+    "category": "children",
+    "cover": "assets/covers/seven-kings-vol-1-en.jpg",
+    "cover_source": {
+      "epub": "books/children/seven-kings-vol-1/Seven Kings · Beyond the Screen.epub",
+      "member": "EPUB/images/cover.png",
+      "sha256": "e5d3506bc1223f4c174fcad5eea24a3bd4ed18970a6a31cc3af6e7195270d760"
+    },
+    "files": {
+      "pdf": "books/children/seven-kings-vol-1/Seven Kings · Beyond the Screen.pdf",
+      "epub": "books/children/seven-kings-vol-1/Seven Kings · Beyond the Screen.epub",
+      "zip": "books/children/seven-kings-vol-1/Seven Kings · Beyond the Screen.zip"
+    },
+    "description": "Brown takes someone else’s box of puppets and begins putting on shows. The first volume opens behind the screen: tangled strings, a rain-soaked stage, and a boy who arrives before the audience.",
+    "description_source": {
+      "epub": "books/children/seven-kings-vol-1/Seven Kings · Beyond the Screen.epub",
+      "chapters": [
+        "EPUB/text/ch001.xhtml",
+        "EPUB/text/ch002.xhtml",
+        "EPUB/text/ch003.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "seven-kings-vol-1",
+    "language": "ru",
+    "title": "Семь королей · По ту сторону ширмы",
+    "note": "Café de la Luna · Детская серия · Книга IV · Том 1",
+    "category": "children",
+    "cover": "assets/covers/seven-kings-vol-1-ru.jpg",
+    "cover_source": {
+      "epub": "books/children/seven-kings-vol-1/Семь королей · По ту сторону ширмы.epub",
+      "member": "EPUB/images/cover.png",
+      "sha256": "c0f687593ea5df418cfb0300b65e1b0759deba0472ddafafae2605dda850d776"
+    },
+    "files": {
+      "pdf": "books/children/seven-kings-vol-1/Семь королей · По ту сторону ширмы.pdf",
+      "epub": "books/children/seven-kings-vol-1/Семь королей · По ту сторону ширмы.epub",
+      "zip": "books/children/seven-kings-vol-1/Семь королей · По ту сторону ширмы.zip"
+    },
+    "description": "Браун забирает чужой ящик с куклами и начинает давать представления. Первый том открывается за ширмой: спутанные нити, мокрая сцена и мальчик, пришедший раньше зрителей.",
+    "description_source": {
+      "epub": "books/children/seven-kings-vol-1/Семь королей · По ту сторону ширмы.epub",
+      "chapters": [
+        "EPUB/text/ch001.xhtml",
+        "EPUB/text/ch002.xhtml",
+        "EPUB/text/ch003.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "seven-kings-vol-2",
+    "language": "en",
+    "title": "Seven Kings · All the Strings",
+    "note": "Café de la Luna · Kids’ Series · Book IV · Volume 2",
+    "category": "children",
+    "cover": "assets/covers/seven-kings-vol-2-en.jpg",
+    "cover_source": {
+      "epub": "books/children/seven-kings-vol-2/Seven Kings · All the Strings.epub",
+      "member": "EPUB/images/cover.png",
+      "sha256": "1f05d692e15be8ce5f5542559616f8e7aa1947a23b9a0d9d39619a71a87784f8"
+    },
+    "files": {
+      "pdf": "books/children/seven-kings-vol-2/Seven Kings · All the Strings.pdf",
+      "epub": "books/children/seven-kings-vol-2/Seven Kings · All the Strings.epub",
+      "zip": "books/children/seven-kings-vol-2/Seven Kings · All the Strings.zip"
+    },
+    "description": "As burning villages are evacuated, a king receives an unusual invitation from Tom Brown: a transparent emerald card. The second volume continues the story of Seven Kings.",
+    "description_source": {
+      "epub": "books/children/seven-kings-vol-2/Seven Kings · All the Strings.epub",
+      "chapters": [
+        "EPUB/text/ch001.xhtml",
+        "EPUB/text/ch002.xhtml",
+        "EPUB/text/ch003.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "seven-kings-vol-2",
+    "language": "ru",
+    "title": "Семь королей · Все нити",
+    "note": "Café de la Luna · Детская серия · Книга IV · Том 2",
+    "category": "children",
+    "cover": "assets/covers/seven-kings-vol-2-ru.jpg",
+    "cover_source": {
+      "epub": "books/children/seven-kings-vol-2/Семь королей · Все нити.epub",
+      "member": "EPUB/images/cover.png",
+      "sha256": "aeea9b96bb2a79771d5660f0f8ebb49f618f52fbdef109a87c35f3cbc8cd2020"
+    },
+    "files": {
+      "pdf": "books/children/seven-kings-vol-2/Семь королей · Все нити.pdf",
+      "epub": "books/children/seven-kings-vol-2/Семь королей · Все нити.epub",
+      "zip": "books/children/seven-kings-vol-2/Семь королей · Все нити.zip"
+    },
+    "description": "Во время эвакуации горящих деревень король получает необычное приглашение от Тома Брауна: прозрачную изумрудную карточку. Второй том продолжает историю «Семи королей».",
+    "description_source": {
+      "epub": "books/children/seven-kings-vol-2/Семь королей · Все нити.epub",
+      "chapters": [
+        "EPUB/text/ch001.xhtml",
+        "EPUB/text/ch002.xhtml",
+        "EPUB/text/ch003.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "problems-with-chronology",
+    "language": "en",
+    "title": "Problems with Chronology",
+    "note": "Absurdity Factory · Story 01",
+    "category": "fiction",
+    "cover": "assets/covers/problems-with-chronology-en.jpg",
+    "cover_source": {
+      "epub": "books/fiction/absurdity-factory/problems-with-chronology/Problems with Chronology.epub",
+      "member": "OEBPS/cover.jpg",
+      "sha256": "2187f5acc62549046d290d5cddbcd3be58d5a5970a57dbcdd930dac3d1dac83a"
+    },
+    "files": {
+      "pdf": "books/fiction/absurdity-factory/problems-with-chronology/Problems with Chronology.pdf",
+      "epub": "books/fiction/absurdity-factory/problems-with-chronology/Problems with Chronology.epub",
+      "zip": "books/fiction/absurdity-factory/problems-with-chronology/Problems with Chronology.zip"
+    },
+    "description": "The father is forty-seven, the son seventy-three, and an office suspends paternity over a discrepancy in dates. A family story in which bureaucracy tries to put the impossible in order.",
+    "description_source": {
+      "epub": "books/fiction/absurdity-factory/problems-with-chronology/Problems with Chronology.epub",
+      "chapters": [
+        "OEBPS/text/part1.xhtml",
+        "OEBPS/text/part2.xhtml",
+        "OEBPS/text/part3.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "problems-with-chronology",
+    "language": "ru",
+    "title": "Проблемы с хронологией",
+    "note": "Фабрика Абсурдов · Рассказ 01",
+    "category": "fiction",
+    "cover": "assets/covers/problems-with-chronology-ru.jpg",
+    "cover_source": {
+      "epub": "books/fiction/absurdity-factory/problems-with-chronology/Проблемы с хронологией.epub",
+      "member": "OEBPS/cover.jpg",
+      "sha256": "cdf2b947da0b6ae650f9621f3dfe8aac73b306570df3ab0a88e3eeb0e347711c"
+    },
+    "files": {
+      "pdf": "books/fiction/absurdity-factory/problems-with-chronology/Проблемы с хронологией.pdf",
+      "epub": "books/fiction/absurdity-factory/problems-with-chronology/Проблемы с хронологией.epub",
+      "zip": "books/fiction/absurdity-factory/problems-with-chronology/Проблемы с хронологией.zip"
+    },
+    "description": "Отцу сорок семь, сыну семьдесят три, а ведомство приостанавливает отцовство из-за ошибки в датах. Семейная история, в которой бюрократия пытается упорядочить невозможное.",
+    "description_source": {
+      "epub": "books/fiction/absurdity-factory/problems-with-chronology/Проблемы с хронологией.epub",
+      "chapters": [
+        "OEBPS/text/part1.xhtml",
+        "OEBPS/text/part2.xhtml",
+        "OEBPS/text/part3.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "standby-mode",
+    "language": "en",
+    "title": "Standby Mode",
+    "note": "Absurdity Factory · Story 02",
+    "category": "fiction",
+    "cover": "assets/covers/standby-mode-en.jpg",
+    "cover_source": {
+      "epub": "books/fiction/absurdity-factory/standby-mode/Standby Mode.epub",
+      "member": "OEBPS/cover.jpg",
+      "sha256": "9743158ebfcc5d200f9c998ff592fc3df10db377f4e6a0dd26c2932b6e007728"
+    },
+    "files": {
+      "pdf": "books/fiction/absurdity-factory/standby-mode/Standby Mode.pdf",
+      "epub": "books/fiction/absurdity-factory/standby-mode/Standby Mode.epub",
+      "zip": "books/fiction/absurdity-factory/standby-mode/Standby Mode.zip"
+    },
+    "description": "A couple are going to bed when their smart mattress asks them to define their success criteria. Even pulling the plug cannot stop its questions: it has a backup battery.",
+    "description_source": {
+      "epub": "books/fiction/absurdity-factory/standby-mode/Standby Mode.epub",
+      "chapters": [
+        "OEBPS/text/part1.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "standby-mode",
+    "language": "ru",
+    "title": "Режим ожидания",
+    "note": "Фабрика Абсурдов · Рассказ 02",
+    "category": "fiction",
+    "cover": "assets/covers/standby-mode-ru.jpg",
+    "cover_source": {
+      "epub": "books/fiction/absurdity-factory/standby-mode/Режим ожидания.epub",
+      "member": "OEBPS/cover.jpg",
+      "sha256": "cb80775aa532542f77af8f54410f1650f1bff7b9a05376d97646d34f597f61d0"
+    },
+    "files": {
+      "pdf": "books/fiction/absurdity-factory/standby-mode/Режим ожидания.pdf",
+      "epub": "books/fiction/absurdity-factory/standby-mode/Режим ожидания.epub",
+      "zip": "books/fiction/absurdity-factory/standby-mode/Режим ожидания.zip"
+    },
+    "description": "Супруги собираются спать, но умный матрас требует уточнить критерии успеха. Даже выдернутая вилка не спасает от его вопросов: у устройства есть резервная батарея.",
+    "description_source": {
+      "epub": "books/fiction/absurdity-factory/standby-mode/Режим ожидания.epub",
+      "chapters": [
+        "OEBPS/text/part1.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "while-the-echo-lasts",
+    "language": "en",
+    "title": "While the Echo Lasts",
+    "note": "Bilingual prose",
+    "category": "fiction",
+    "cover": "assets/covers/while-the-echo-lasts-en.jpg",
+    "cover_source": {
+      "epub": "books/fiction/standalone/while-the-echo-lasts/While the Echo Lasts.epub",
+      "member": "OEBPS/cover.jpg",
+      "sha256": "696f419513601a0656c90d0037eed19c690f98b7fd99afada8edb2cd7b3c70af"
+    },
+    "files": {
+      "pdf": "books/fiction/standalone/while-the-echo-lasts/While the Echo Lasts.pdf",
+      "epub": "books/fiction/standalone/while-the-echo-lasts/While the Echo Lasts.epub",
+      "zip": "books/fiction/standalone/while-the-echo-lasts/While the Echo Lasts.zip"
+    },
+    "description": "Evgeniy Tyurkin recalls a life in music: the trombone, practice with his father, and a school orchestra whose sounds would not come together as music.",
+    "description_source": {
+      "epub": "books/fiction/standalone/while-the-echo-lasts/While the Echo Lasts.epub",
+      "chapters": [
+        "OEBPS/chapters/part1.xhtml",
+        "OEBPS/chapters/part2.xhtml",
+        "OEBPS/chapters/part3.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "while-the-echo-lasts",
+    "language": "ru",
+    "title": "Пока звучит эхо",
+    "note": "Двуязычная проза",
+    "category": "fiction",
+    "cover": "assets/covers/while-the-echo-lasts-ru.jpg",
+    "cover_source": {
+      "epub": "books/fiction/standalone/while-the-echo-lasts/Пока звучит эхо.epub",
+      "member": "EPUB/media/cover.png",
+      "sha256": "19346a78338b533bed7a9dc8857308e1a37e393e6b9050ec84ab27a3ea925784"
+    },
+    "files": {
+      "pdf": "books/fiction/standalone/while-the-echo-lasts/Пока звучит эхо.pdf",
+      "epub": "books/fiction/standalone/while-the-echo-lasts/Пока звучит эхо.epub",
+      "zip": "books/fiction/standalone/while-the-echo-lasts/Пока звучит эхо.zip"
+    },
+    "description": "Воспоминания Евгения Тюркина о музыкальной жизни: тромбон, занятия с отцом и школьный оркестр, в котором звуки никак не складывались в музыку.",
+    "description_source": {
+      "epub": "books/fiction/standalone/while-the-echo-lasts/Пока звучит эхо.epub",
+      "chapters": [
+        "EPUB/text/ch002.xhtml",
+        "EPUB/text/ch003.xhtml",
+        "EPUB/text/ch004.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "the-last-don-quixote",
+    "language": "en",
+    "title": "The Last Don Quixote",
+    "note": "Philosophical fiction",
+    "category": "fiction",
+    "cover": "assets/covers/the-last-don-quixote-en.png",
+    "cover_source": {
+      "epub": "books/fiction/standalone/the-last-don-quixote/The Last Don Quixote.epub",
+      "member": "OEBPS/cover.png",
+      "sha256": "93fe0e14b071b0aa9c72c04104ac728668cdb2cfb82a86ad74f34b10d80e1238"
+    },
+    "files": {
+      "pdf": "books/fiction/standalone/the-last-don-quixote/The Last Don Quixote.pdf",
+      "epub": "books/fiction/standalone/the-last-don-quixote/The Last Don Quixote.epub",
+      "zip": "books/fiction/standalone/the-last-don-quixote/The Last Don Quixote.zip"
+    },
+    "description": "Declared the last Don Quixote, the narrator must prove that an unfinished undertaking matters to someone besides himself. With a bass guitar and a motorcycle called Maybe, he sets out to save an old mill.",
+    "description_source": {
+      "epub": "books/fiction/standalone/the-last-don-quixote/The Last Don Quixote.epub",
+      "chapters": [
+        "OEBPS/chapter01.xhtml",
+        "OEBPS/chapter02.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "the-last-don-quixote",
+    "language": "ru",
+    "title": "Последний Дон-Кихот",
+    "note": "Философская проза",
+    "category": "fiction",
+    "cover": "assets/covers/the-last-don-quixote-ru.png",
+    "cover_source": {
+      "epub": "books/fiction/standalone/the-last-don-quixote/Последний Дон-Кихот.epub",
+      "member": "OEBPS/cover.png",
+      "sha256": "a322e86d2343b0b3ae76dcd73c3800e3676e3b3770f44d7ed3441fec12eb5fb6"
+    },
+    "files": {
+      "pdf": "books/fiction/standalone/the-last-don-quixote/Последний Дон-Кихот.pdf",
+      "epub": "books/fiction/standalone/the-last-don-quixote/Последний Дон-Кихот.epub",
+      "zip": "books/fiction/standalone/the-last-don-quixote/Последний Дон-Кихот.zip"
+    },
+    "description": "Герою, объявленному последним Дон-Кихотом, предстоит доказать, что его незавершённое дело нужно кому-то ещё. С бас-гитарой и мотоциклом по имени Может Быть он отправляется спасать старую мельницу.",
+    "description_source": {
+      "epub": "books/fiction/standalone/the-last-don-quixote/Последний Дон-Кихот.epub",
+      "chapters": [
+        "OEBPS/chapter01.xhtml",
+        "OEBPS/chapter02.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "introduction-to-the-programmers-profession",
+    "language": "en",
+    "title": "Introduction to the Programmer’s Profession",
+    "note": "Learning to program",
+    "category": "technology",
+    "cover": "assets/covers/introduction-to-the-programmers-profession-en.jpg",
+    "cover_source": {
+      "epub": "books/technology/education/introduction-to-the-programmers-profession/Introduction to the Programmer’s Profession.epub",
+      "member": "EPUB/media/cover-en.jpg",
+      "sha256": "40e60886bccdd13def533ff8191b155fd2e25794fa8b556526dfd1b19f0df431"
+    },
+    "files": {
+      "pdf": "books/technology/education/introduction-to-the-programmers-profession/Introduction to the Programmer’s Profession.pdf",
+      "epub": "books/technology/education/introduction-to-the-programmers-profession/Introduction to the Programmer’s Profession.epub",
+      "zip": "books/technology/education/introduction-to-the-programmers-profession/Introduction to the Programmer’s Profession.zip"
+    },
+    "description": "A six-month introduction to programming, pairing Common Lisp with Java. Practice aboard station MODULE moves from first programs to networking, databases, interviews, and the job market.",
+    "description_source": {
+      "epub": "books/technology/education/introduction-to-the-programmers-profession/Introduction to the Programmer’s Profession.epub",
+      "chapters": [
+        "EPUB/text/ch001.xhtml",
+        "EPUB/text/ch002.xhtml",
+        "EPUB/text/ch003.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "fishing-the-stream",
+    "language": "en",
+    "title": "Fishing the Stream",
+    "note": "Reflective nonfiction",
+    "category": "technology",
+    "cover": "assets/covers/fishing-the-stream-en.jpg",
+    "cover_source": {
+      "epub": "books/technology/other/fishing-the-stream/Fishing the Stream.epub",
+      "member": "EPUB/media/fishing_the_stream_cover_en.png",
+      "sha256": "18197ee965fca72fe267fe152153b1516b13ef17a267975a8bad16b21774c276"
+    },
+    "files": {
+      "pdf": "books/technology/other/fishing-the-stream/Fishing the Stream.pdf",
+      "epub": "books/technology/other/fishing-the-stream/Fishing the Stream.epub",
+      "zip": "books/technology/other/fishing-the-stream/Fishing the Stream.zip"
+    },
+    "description": "Field notes on ChatGPT client behaviour: files, context, status labels, generation, and failures. Observations are kept separate from working hypotheses about the system’s architecture.",
+    "description_source": {
+      "epub": "books/technology/other/fishing-the-stream/Fishing the Stream.epub",
+      "chapters": [
+        "EPUB/text/ch001.xhtml",
+        "EPUB/text/ch002.xhtml",
+        "EPUB/text/ch003.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "fishing-the-stream",
+    "language": "ru",
+    "title": "Речная рыбалка",
+    "note": "Художественно-техническая проза",
+    "category": "technology",
+    "cover": "assets/covers/fishing-the-stream-ru.jpg",
+    "cover_source": {
+      "epub": "books/technology/other/fishing-the-stream/Речная рыбалка.epub",
+      "member": "EPUB/media/rechnaya_rybalka_cover_ru.png",
+      "sha256": "39cbcd437c93f954e2bb89af49116a98c700903ba469448797e80f61794baf66"
+    },
+    "files": {
+      "pdf": "books/technology/other/fishing-the-stream/Речная рыбалка.pdf",
+      "epub": "books/technology/other/fishing-the-stream/Речная рыбалка.epub",
+      "zip": "books/technology/other/fishing-the-stream/Речная рыбалка.zip"
+    },
+    "description": "Полевые заметки о поведении клиента ChatGPT: файлы, контекст, статусы, генерация и сбои. Наблюдения отделены от рабочих гипотез об устройстве системы.",
+    "description_source": {
+      "epub": "books/technology/other/fishing-the-stream/Речная рыбалка.epub",
+      "chapters": [
+        "EPUB/text/ch001.xhtml",
+        "EPUB/text/ch002.xhtml",
+        "EPUB/text/ch003.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "code-bites",
+    "language": "ru",
+    "title": "Код кусается",
+    "note": "Технологии и проза",
+    "category": "technology",
+    "cover": "assets/covers/code-bites-ru.jpg",
+    "cover_source": {
+      "epub": "books/technology/other/code-bites/Код кусается.epub",
+      "member": "EPUB/media/kod-kusaetsya-cover-ru-final.png",
+      "sha256": "6cf3b440d63723e9ae83bf0a6a776f7399c2e019811a6da327d36defc3a78610"
+    },
+    "files": {
+      "pdf": "books/technology/other/code-bites/Код кусается.pdf",
+      "epub": "books/technology/other/code-bites/Код кусается.epub",
+      "zip": "books/technology/other/code-bites/Код кусается.zip"
+    },
+    "description": "Поездка в Хайдарабад по работе в Oracle становится рассказом о программировании, команде и повседневных неожиданностях. Всё начинается с прилёта в Индию в марте 2018 года.",
+    "description_source": {
+      "epub": "books/technology/other/code-bites/Код кусается.epub",
+      "chapters": [
+        "EPUB/text/ch003.xhtml",
+        "EPUB/text/ch004.xhtml",
+        "EPUB/text/ch005.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "philosophy-of-intent-machines",
+    "language": "en",
+    "title": "The Philosophy of Intent Machines",
+    "note": "Place, intention, and shared harmony",
+    "category": "ideas",
+    "cover": "assets/covers/philosophy-of-intent-machines-en.png",
+    "cover_source": {
+      "epub": "books/ideas/intent-machines/philosophy-of-intent-machines/The Philosophy of Intent Machines.epub",
+      "member": "EPUB/media/Philosophy_Intent_Machines_Cover_EN.png",
+      "sha256": "3dd7ce3dbab07106211253718b0837804148e2420818a3d9422ddaddf745cabf"
+    },
+    "files": {
+      "pdf": "books/ideas/intent-machines/philosophy-of-intent-machines/The Philosophy of Intent Machines.pdf",
+      "epub": "books/ideas/intent-machines/philosophy-of-intent-machines/The Philosophy of Intent Machines.epub",
+      "zip": "books/ideas/intent-machines/philosophy-of-intent-machines/The Philosophy of Intent Machines.zip"
+    },
+    "description": "An open philosophy of finding and creating one’s place, acting with intention, and building harmony with others. It explores freedom, responsibility, and the limits of Intent Machines.",
+    "description_source": {
+      "epub": "books/ideas/intent-machines/philosophy-of-intent-machines/The Philosophy of Intent Machines.epub",
+      "chapters": [
+        "EPUB/text/ch001.xhtml",
+        "EPUB/text/ch002.xhtml",
+        "EPUB/text/ch005.xhtml",
+        "EPUB/text/ch008.xhtml",
+        "EPUB/text/ch009.xhtml",
+        "EPUB/text/ch010.xhtml",
+        "EPUB/text/ch011.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "philosophy-of-intent-machines",
+    "language": "ru",
+    "title": "Философия Машин Намерения",
+    "note": "Место, намерение и совместная гармония",
+    "category": "ideas",
+    "cover": "assets/covers/philosophy-of-intent-machines-ru.png",
+    "cover_source": {
+      "epub": "books/ideas/intent-machines/philosophy-of-intent-machines/Философия Машин Намерения.epub",
+      "member": "EPUB/media/Philosophy_Intent_Machines_Cover_RU.png",
+      "sha256": "9d559f8c44f741c8a11e4a36fde5c89e1d3b4a432ed7712937bf9162e4221ecf"
+    },
+    "files": {
+      "pdf": "books/ideas/intent-machines/philosophy-of-intent-machines/Философия Машин Намерения.pdf",
+      "epub": "books/ideas/intent-machines/philosophy-of-intent-machines/Философия Машин Намерения.epub",
+      "zip": "books/ideas/intent-machines/philosophy-of-intent-machines/Философия Машин Намерения.zip"
+    },
+    "description": "Открытая философия поиска и создания своего места, осмысленного действия и совместного построения гармонии. О свободе, ответственности и пределах Машин Намерения.",
+    "description_source": {
+      "epub": "books/ideas/intent-machines/philosophy-of-intent-machines/Философия Машин Намерения.epub",
+      "chapters": [
+        "EPUB/text/ch001.xhtml",
+        "EPUB/text/ch002.xhtml",
+        "EPUB/text/ch005.xhtml",
+        "EPUB/text/ch008.xhtml",
+        "EPUB/text/ch009.xhtml",
+        "EPUB/text/ch010.xhtml",
+        "EPUB/text/ch011.xhtml"
+      ]
+    }
+  }
+]

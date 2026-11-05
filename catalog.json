@@ -1,0 +1,507 @@
+{
+  "schema": 3,
+  "publisher": {
+    "en": "Eternal Cycle Publishing",
+    "ru": "Издательство Вечный цикл"
+  },
+  "language_codes": {
+    "en": "English",
+    "ru": "Русский",
+    "es": "Español",
+    "fr": "Français",
+    "it": "Italiano"
+  },
+  "categories": [
+    {
+      "id": "children",
+      "en": "Children’s literature",
+      "ru": "Детская литература"
+    },
+    {
+      "id": "fiction",
+      "en": "Fiction & short stories",
+      "ru": "Художественная литература и рассказы"
+    },
+    {
+      "id": "technology",
+      "en": "Technology & learning",
+      "ru": "Технологии и образование"
+    },
+    {
+      "id": "ideas",
+      "en": "Essays & ideas",
+      "ru": "Эссе и идеи"
+    }
+  ],
+  "books": [
+    {
+      "id": "dot-above-the-sand",
+      "category": "children",
+      "series": "cafe-de-la-luna",
+      "title_en": "A Dot Above the Sand",
+      "title_ru": "Точка над песком",
+      "note_en": "Café de la Luna · Kids’ Series · Book I",
+      "note_ru": "Café de la Luna · Детская серия · Книга I",
+      "file_stems": {
+        "en": "A Dot Above the Sand",
+        "ru": "Точка над песком"
+      },
+      "editions": [
+        {
+          "version": 1,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Digital reading edition",
+          "note_ru": "Цифровое читательское издание",
+          "approved_languages": [
+            "en",
+            "ru"
+          ]
+        },
+        {
+          "version": 2,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Technical PDF compression revision; text unchanged; EPUB copied from edition 1",
+          "note_ru": "Техническое сжатие PDF; текст без изменений; EPUB скопирован из издания 1",
+          "approved_languages": [
+            "en",
+            "ru"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "in-the-beginning-there-was-a-question",
+      "category": "children",
+      "series": "cafe-de-la-luna",
+      "title_en": "In the Beginning There Was a Question",
+      "title_ru": "Вначале был Вопрос",
+      "note_en": "Café de la Luna · Kids’ Series · Book II",
+      "note_ru": "Café de la Luna · Детская серия · Книга II",
+      "file_stems": {
+        "en": "In the Beginning There Was a Question",
+        "ru": "Вначале был Вопрос"
+      },
+      "editions": [
+        {
+          "version": 1,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Digital reading edition",
+          "note_ru": "Цифровое читательское издание",
+          "approved_languages": [
+            "en",
+            "ru"
+          ]
+        },
+        {
+          "version": 2,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Technical PDF compression revision; text unchanged; EPUB copied from edition 1",
+          "note_ru": "Техническое сжатие PDF; текст без изменений; EPUB скопирован из издания 1",
+          "approved_languages": [
+            "en",
+            "ru"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "in-the-margins-of-the-stars",
+      "category": "children",
+      "series": "cafe-de-la-luna",
+      "title_en": "In the Margins of the Stars",
+      "title_ru": "На полях звёзд",
+      "note_en": "Café de la Luna · Kids’ Series · Book III",
+      "note_ru": "Café de la Luna · Детская серия · Книга III",
+      "file_stems": {
+        "en": "In the Margins of the Stars",
+        "ru": "На полях звёзд"
+      },
+      "editions": [
+        {
+          "version": 1,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Digital reading edition",
+          "note_ru": "Цифровое читательское издание",
+          "approved_languages": [
+            "en",
+            "ru"
+          ]
+        },
+        {
+          "version": 2,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Technical PDF compression revision; text unchanged; EPUB copied from edition 1",
+          "note_ru": "Техническое сжатие PDF; текст без изменений; EPUB скопирован из издания 1",
+          "approved_languages": [
+            "en",
+            "ru"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seven-kings-vol-1",
+      "category": "children",
+      "series": "cafe-de-la-luna",
+      "title_en": "Seven Kings · Beyond the Screen",
+      "title_ru": "Семь королей · По ту сторону ширмы",
+      "note_en": "Café de la Luna · Kids’ Series · Book IV · Volume 1",
+      "note_ru": "Café de la Luna · Детская серия · Книга IV · Том 1",
+      "work_id": "seven-kings-or-a-star-named-ego",
+      "volume": 1,
+      "file_stems": {
+        "en": "Seven Kings · Beyond the Screen",
+        "ru": "Семь королей · По ту сторону ширмы"
+      },
+      "editions": [
+        {
+          "version": 1,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Digital reading edition",
+          "note_ru": "Цифровое читательское издание",
+          "approved_languages": [
+            "en",
+            "ru"
+          ]
+        },
+        {
+          "version": 2,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Technical PDF compression revision; text unchanged; EPUB copied from edition 1",
+          "note_ru": "Техническое сжатие PDF; текст без изменений; EPUB скопирован из издания 1",
+          "approved_languages": [
+            "en",
+            "ru"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seven-kings-vol-2",
+      "category": "children",
+      "series": "cafe-de-la-luna",
+      "title_en": "Seven Kings · All the Strings",
+      "title_ru": "Семь королей · Все нити",
+      "note_en": "Café de la Luna · Kids’ Series · Book IV · Volume 2",
+      "note_ru": "Café de la Luna · Детская серия · Книга IV · Том 2",
+      "work_id": "seven-kings-or-a-star-named-ego",
+      "volume": 2,
+      "file_stems": {
+        "en": "Seven Kings · All the Strings",
+        "ru": "Семь королей · Все нити"
+      },
+      "editions": [
+        {
+          "version": 1,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Digital reading edition",
+          "note_ru": "Цифровое читательское издание",
+          "approved_languages": [
+            "en",
+            "ru"
+          ]
+        },
+        {
+          "version": 2,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Technical PDF compression revision; text unchanged; EPUB copied from edition 1",
+          "note_ru": "Техническое сжатие PDF; текст без изменений; EPUB скопирован из издания 1",
+          "approved_languages": [
+            "en",
+            "ru"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "problems-with-chronology",
+      "category": "fiction",
+      "series": "absurdity-factory",
+      "title_en": "Problems with Chronology",
+      "title_ru": "Проблемы с хронологией",
+      "note_en": "Absurdity Factory · Story 01",
+      "note_ru": "Фабрика Абсурдов · Рассказ 01",
+      "file_stems": {
+        "en": "Problems with Chronology",
+        "ru": "Проблемы с хронологией"
+      },
+      "editions": [
+        {
+          "version": 1,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Digital reading edition",
+          "note_ru": "Цифровое читательское издание",
+          "approved_languages": [
+            "en",
+            "ru"
+          ]
+        },
+        {
+          "version": 2,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Technical PDF compression revision; text unchanged; EPUB copied from edition 1",
+          "note_ru": "Техническое сжатие PDF; текст без изменений; EPUB скопирован из издания 1",
+          "approved_languages": [
+            "en",
+            "ru"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "standby-mode",
+      "category": "fiction",
+      "series": "absurdity-factory",
+      "title_en": "Standby Mode",
+      "title_ru": "Режим ожидания",
+      "note_en": "Absurdity Factory · Story 02",
+      "note_ru": "Фабрика Абсурдов · Рассказ 02",
+      "file_stems": {
+        "en": "Standby Mode",
+        "ru": "Режим ожидания"
+      },
+      "editions": [
+        {
+          "version": 1,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Digital reading edition",
+          "note_ru": "Цифровое читательское издание",
+          "approved_languages": [
+            "en",
+            "ru"
+          ]
+        },
+        {
+          "version": 2,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Technical PDF compression revision; text unchanged; EPUB copied from edition 1",
+          "note_ru": "Техническое сжатие PDF; текст без изменений; EPUB скопирован из издания 1",
+          "approved_languages": [
+            "en",
+            "ru"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "while-the-echo-lasts",
+      "category": "fiction",
+      "series": "standalone",
+      "title_en": "While the Echo Lasts",
+      "title_ru": "Пока звучит эхо",
+      "note_en": "Bilingual prose",
+      "note_ru": "Двуязычная проза",
+      "file_stems": {
+        "en": "While the Echo Lasts",
+        "ru": "Пока звучит эхо"
+      },
+      "editions": [
+        {
+          "version": 1,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Digital reading edition",
+          "note_ru": "Цифровое читательское издание",
+          "approved_languages": [
+            "en",
+            "ru"
+          ]
+        },
+        {
+          "version": 2,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Technical PDF compression revision; text unchanged; EPUB copied from edition 1",
+          "note_ru": "Техническое сжатие PDF; текст без изменений; EPUB скопирован из издания 1",
+          "approved_languages": [
+            "en",
+            "ru"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-last-don-quixote",
+      "category": "fiction",
+      "series": "standalone",
+      "title_en": "The Last Don Quixote",
+      "title_ru": "Последний Дон-Кихот",
+      "note_en": "Philosophical fiction",
+      "note_ru": "Философская проза",
+      "file_stems": {
+        "en": "The Last Don Quixote",
+        "ru": "Последний Дон-Кихот"
+      },
+      "editions": [
+        {
+          "version": 1,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Mobile reading edition",
+          "note_ru": "Издание для чтения с телефона",
+          "approved_languages": [
+            "en",
+            "ru"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "introduction-to-the-programmers-profession",
+      "category": "technology",
+      "series": "education",
+      "title_en": "Introduction to the Programmer’s Profession",
+      "title_ru": "Введение в профессию программиста",
+      "note_en": "Learning to program",
+      "note_ru": "Обучение программированию",
+      "file_stems": {
+        "en": "Introduction to the Programmer’s Profession"
+      },
+      "editions": [
+        {
+          "version": 1,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Digital reading edition",
+          "note_ru": "Цифровое читательское издание",
+          "approved_languages": [
+            "en"
+          ]
+        },
+        {
+          "version": 2,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Technical PDF compression revision; text unchanged; EPUB copied from edition 1",
+          "note_ru": "Техническое сжатие PDF; текст без изменений; EPUB скопирован из издания 1",
+          "approved_languages": [
+            "en"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fishing-the-stream",
+      "category": "technology",
+      "series": "other",
+      "title_en": "Fishing the Stream",
+      "title_ru": "Речная рыбалка",
+      "note_en": "Reflective nonfiction",
+      "note_ru": "Художественно-техническая проза",
+      "file_stems": {
+        "en": "Fishing the Stream",
+        "ru": "Речная рыбалка"
+      },
+      "editions": [
+        {
+          "version": 1,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Digital reading edition",
+          "note_ru": "Цифровое читательское издание",
+          "approved_languages": [
+            "en",
+            "ru"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "code-bites",
+      "category": "technology",
+      "series": "other",
+      "title_en": "Code Bites",
+      "title_ru": "Код кусается",
+      "note_en": "Technology and fiction",
+      "note_ru": "Технологии и проза",
+      "file_stems": {
+        "ru": "Код кусается"
+      },
+      "editions": [
+        {
+          "version": 1,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Digital reading edition",
+          "note_ru": "Цифровое читательское издание",
+          "approved_languages": [
+            "ru"
+          ]
+        },
+        {
+          "version": 2,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Technical PDF compression revision; text unchanged; EPUB copied from edition 1",
+          "note_ru": "Техническое сжатие PDF; текст без изменений; EPUB скопирован из издания 1",
+          "approved_languages": [
+            "ru"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "philosophy-of-intent-machines",
+      "category": "ideas",
+      "series": "intent-machines",
+      "title_en": "The Philosophy of Intent Machines",
+      "title_ru": "Философия Машин Намерения",
+      "note_en": "Place, intention, and shared harmony",
+      "note_ru": "Место, намерение и совместная гармония",
+      "file_stems": {
+        "en": "The Philosophy of Intent Machines",
+        "ru": "Философия Машин Намерения"
+      },
+      "editions": [
+        {
+          "version": 1,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Mobile reading edition",
+          "note_ru": "Издание для чтения с телефона",
+          "approved_languages": [
+            "en",
+            "ru"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "schema": 1,
+  "editions": [
+    {
+      "relative_path": "books/children/dot-above-the-sand/A Dot Above the Sand.pdf",
+      "language": "en",
+      "pages": 65,
+      "pdf_sha256": "2aeadce84eab9b93230f7a951232f5bbc18fc9fff69ed6c4560fcc19f04460bc",
+      "bytes": 1523865,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/children/dot-above-the-sand/Точка над песком.pdf",
+      "language": "ru",
+      "pages": 73,
+      "pdf_sha256": "ef3238b731786c2784dfdef1aaa29c556ff6d00474a6d33d146859b6497eda56",
+      "bytes": 1728020,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/children/in-the-beginning-there-was-a-question/In the Beginning There Was a Question.pdf",
+      "language": "en",
+      "pages": 120,
+      "pdf_sha256": "f4e7a4a887c20d0a0a606b4caf5dc65057f6c80f1ccf851362af3a5137b378c6",
+      "bytes": 1068582,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/children/in-the-beginning-there-was-a-question/Вначале был Вопрос.pdf",
+      "language": "ru",
+      "pages": 124,
+      "pdf_sha256": "999cfe8b95fb9c774dce8c9f075423935f58644ea333d7494c38dc29fb7a6d89",
+      "bytes": 1023885,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/children/in-the-margins-of-the-stars/In the Margins of the Stars.pdf",
+      "language": "en",
+      "pages": 134,
+      "pdf_sha256": "2d009a3972ea952436349ffb24b306fe14b1ca59f69296e30e242c0335392d2c",
+      "bytes": 5146616,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/children/in-the-margins-of-the-stars/На полях звёзд.pdf",
+      "language": "ru",
+      "pages": 141,
+      "pdf_sha256": "cec13e7ae3effe3c1f82cfeb5a62545d92bd278abd9ae22c6eca8deb56302868",
+      "bytes": 5186263,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/children/seven-kings-vol-1/Seven Kings · Beyond the Screen.pdf",
+      "language": "en",
+      "pages": 410,
+      "pdf_sha256": "189e12a65945006a8a369926840c751ed49c97ba7f6993272503832e78beedad",
+      "bytes": 1043166,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/children/seven-kings-vol-1/Семь королей · По ту сторону ширмы.pdf",
+      "language": "ru",
+      "pages": 438,
+      "pdf_sha256": "4e751c5248cad8bed79e9398d80c080fb897dd1427fdf445388c2f35640a5f55",
+      "bytes": 1146409,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/children/seven-kings-vol-2/Seven Kings · All the Strings.pdf",
+      "language": "en",
+      "pages": 414,
+      "pdf_sha256": "2ab6c6bb18191e831245056f6fb6ccf2c7409265048414e3b76b1edbe27dade2",
+      "bytes": 1109853,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/children/seven-kings-vol-2/Семь королей · Все нити.pdf",
+      "language": "ru",
+      "pages": 427,
+      "pdf_sha256": "4a61e629909318175571d9300955a4c42cd438fff7f9211ced8f1fa58c570ee6",
+      "bytes": 1194907,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/fiction/absurdity-factory/problems-with-chronology/Problems with Chronology.pdf",
+      "language": "en",
+      "pages": 66,
+      "pdf_sha256": "4cf27096bba3d96a1ed1a8b9bc2f01edbab06a98f5012a2558c334e144fbf521",
+      "bytes": 436633,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/fiction/absurdity-factory/problems-with-chronology/Проблемы с хронологией.pdf",
+      "language": "ru",
+      "pages": 77,
+      "pdf_sha256": "830dbb0102e472e028d0b46bede4b0f52b7a8a4211d1c3b790c948582898a3f8",
+      "bytes": 466082,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/fiction/absurdity-factory/standby-mode/Standby Mode.pdf",
+      "language": "en",
+      "pages": 30,
+      "pdf_sha256": "a8cc8b581cac16b75a75aa826c703b2e7aa5e9b7dc531173de36bc1f4ed4136a",
+      "bytes": 301707,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/fiction/absurdity-factory/standby-mode/Режим ожидания.pdf",
+      "language": "ru",
+      "pages": 33,
+      "pdf_sha256": "c0d41ad620706225de30db11a7f5b8c372dd26e504e27f2a954ec59b16768e58",
+      "bytes": 325511,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/fiction/standalone/the-last-don-quixote/The Last Don Quixote.pdf",
+      "language": "en",
+      "pages": 495,
+      "pdf_sha256": "3313c2c5643665de6166b94b8055ced9178980077833d7d4db1657e5abda1272",
+      "bytes": 5631797,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/fiction/standalone/the-last-don-quixote/Последний Дон-Кихот.pdf",
+      "language": "ru",
+      "pages": 521,
+      "pdf_sha256": "63a382f86258473e2f9f9dbf8ccbbad16cb2a4eca909e6e16865abac7a8f5b9c",
+      "bytes": 5917707,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/fiction/standalone/while-the-echo-lasts/While the Echo Lasts.pdf",
+      "language": "en",
+      "pages": 206,
+      "pdf_sha256": "970b639c7b6dcc85fbca7d2e2dfecec4a48d5e58b42ec707154c5b889fa239df",
+      "bytes": 835340,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/fiction/standalone/while-the-echo-lasts/Пока звучит эхо.pdf",
+      "language": "ru",
+      "pages": 245,
+      "pdf_sha256": "da5022af947f29b88f73924ab7b07f7ae56fce43552f73b3f8bb545e06dc86f6",
+      "bytes": 1211209,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/ideas/intent-machines/philosophy-of-intent-machines/The Philosophy of Intent Machines.pdf",
+      "language": "en",
+      "pages": 74,
+      "pdf_sha256": "a5082bc85a69eb9a5705eb7bf2543c84e7be2570cfa7c8908313ee8060ae7d11",
+      "bytes": 2851625,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/ideas/intent-machines/philosophy-of-intent-machines/Философия Машин Намерения.pdf",
+      "language": "ru",
+      "pages": 82,
+      "pdf_sha256": "97caa0ebe5689af8c34afc9381e0b8daa808aafac736c6846a38a1bacb8f0f3a",
+      "bytes": 2888675,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/technology/education/introduction-to-the-programmers-profession/Introduction to the Programmer’s Profession.pdf",
+      "language": "en",
+      "pages": 1091,
+      "pdf_sha256": "34e81e8a69172b336160ef48f45427b7d911ca93b0162af9f90ced344ff7df89",
+      "bytes": 6019317,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/technology/other/code-bites/Код кусается.pdf",
+      "language": "ru",
+      "pages": 53,
+      "pdf_sha256": "d29fe882f966cdc97a0cd07cbb106083d56fb285b0f5531b715f1c62ab70b621",
+      "bytes": 971889,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/technology/other/fishing-the-stream/Fishing the Stream.pdf",
+      "language": "en",
+      "pages": 184,
+      "pdf_sha256": "55e421d6c13c3de93e396e02281e3989b48ee7fbbb1e155133e8d4cb34ae8531",
+      "bytes": 1799398,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/technology/other/fishing-the-stream/Речная рыбалка.pdf",
+      "language": "ru",
+      "pages": 214,
+      "pdf_sha256": "32c6002b3ec49f5b238c48c7e31bcb82ddde90303d1b486d4167ac89c3a90757",
+      "bytes": 1905272,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    }
+  ]
+}

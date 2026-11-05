@@ -1,8 +1,4 @@
-*.md
-!README.md
-!README.*.md
-!CONTRIBUTING.md
-!EDITION_POLICY.md
-!CHANGELOG.md
-.DS_Store
+dist/
+_site/
 __pycache__/
+*.pyc
