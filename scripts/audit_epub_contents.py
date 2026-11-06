@@ -112,12 +112,12 @@ def check(epub, title, lang, cover_source):
                 tag = el.tag.rsplit("}",1)[-1]
                 if tag in ("img", "image") and "src" in el.attrib:
                     link = normpath(posixpath.dirname(path), el.attrib["src"])
-                    if link and link not in nset: missing_in_xhtml.append(link)
+                    if link and link not in nset: missing_in_xhtml.append(f"{path}: src={el.attrib['src']} => {link}")
                 elif tag in ("a", "link") and "href" in el.attrib:
                     link = normpath(posixpath.dirname(path), el.attrib["href"])
-                    if link and link not in nset: missing_in_xhtml.append(link)
+                    if link and link not in nset: missing_in_xhtml.append(f"{path}: href={el.attrib['href']} => {link}")
         if missing_in_xhtml:
-            issues.append("Broken XHTML links/media: "+", ".join(sorted(set(missing_in_xhtml))[:5]))
+            issues.append("Broken XHTML links/media: "+", ".join(sorted(set(missing_in_xhtml))[:20]))
         if nonspace_characters < 500:
             issues.append("Reader has too little visible text (" + str(nonspace_characters) + " chars)")
         if xhtml_count != len(pages):
