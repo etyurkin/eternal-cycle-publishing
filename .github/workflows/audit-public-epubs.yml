@@ -1,0 +1,17 @@
+name: Audit public EPUB reading editions
+on:
+  push:
+    branches: [repair-public-epub-readers]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  epub-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit public EPUB contents, metadata, covers, internal links
+        run: python scripts/audit_epub_contents.py
