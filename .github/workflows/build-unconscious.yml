@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/build-unconscious.yml'
       - 'scripts/publish_unconscious_programming.py'
+      - 'tests/test_gallery.py'
       - 'books/technology/other/unconscious-programming/**'
 permissions:
   contents: write
