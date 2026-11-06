@@ -1,6 +1,7 @@
 import unittest,json,sys,tempfile,os,copy,zipfile
 from pathlib import Path
 from html.parser import HTMLParser
+from unittest.mock import patch
 from urllib.parse import unquote
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from build_gallery import build,safe,verify_provenance,render
@@ -29,7 +30,7 @@ class GalleryTests(unittest.TestCase):
   with tempfile.TemporaryDirectory() as d:
    out=Path(d)/'site';expected=build(SOURCE,out,'/eternal-cycle-publishing/')
    data=json.loads((ROOT/'gallery/books.json').read_text())
-   self.assertEqual(expected,{str(p.relative_to(out)) for p in out.rglob('*') if p.is_file()});self.assertEqual(len(expected),len(data)*4+5)
+   self.assertEqual(expected,{str(p.relative_to(out)) for p in out.rglob('*') if p.is_file()});self.assertEqual(len(expected),sum(len(b['files'])+1 for b in data)+5)
    for language,rel in (('en','index.html'),('en','en/index.html'),('ru','ru/index.html')):
     count=sum(b['language']==language for b in data)
     text=(out/rel).read_text();self.assertIn(f'<html lang="{language}">',text)
@@ -78,8 +79,60 @@ class GalleryTests(unittest.TestCase):
    with self.assertRaises(ValueError):build(SOURCE,Path(d),'https://bad/')
  def test_provenance(self):
   for b in json.loads((ROOT/'gallery/books.json').read_text()):
-   self.assertTrue(b['description_source']['chapters']);self.assertEqual(b['cover_source']['epub'],b['files']['epub'])
+   self.assertTrue(b['description_source']['chapters']);self.assertEqual(b['description_source']['epub'],b['files']['epub'])
    verify_provenance(SOURCE,b)
+ def test_six_unbundled_cards_have_no_zip_links_or_notes(self):
+  from catalog_common import load_catalog
+  _,rows=load_catalog(SOURCE)
+  unbundled={(r['book']['id'],r['language']) for r in rows if r['archive'] is None}
+  self.assertEqual(unbundled,{
+   ('introduction-to-the-programmers-profession','ru'),('code-bites','en'),
+   ('book-of-side-effects','ru'),
+   ('six-spray-cans','ru'),('blueprint-we-made-it','en'),('blueprint-we-made-it','ru')})
+  self.assertEqual(sum(r['archive'] is not None for r in rows),26)
+  books=json.loads((ROOT/'gallery/books.json').read_text())
+  for b in books:
+   if (b['id'],b['language']) in unbundled:
+    self.assertEqual(set(b['files']),{'pdf','epub'})
+    card=render(b['language'],[b],SOURCE,'/').split('<article ',1)[1].split('</article>',1)[0]
+    self.assertNotIn('ZIP',card);self.assertNotIn('.zip',card)
+ def test_gallery_rejects_wrong_formats_for_latest_edition(self):
+  books=json.loads((ROOT/'gallery/books.json').read_text())
+  for bundled in (False,True):
+   data=copy.deepcopy(books)
+   card=next(b for b in data if ('zip' in b['files'])==bundled)
+   if bundled:del card['files']['zip']
+   else:card['files']['zip']=card['files']['pdf'][:-4]+'.zip'
+   with tempfile.TemporaryDirectory() as d:
+    fake=Path(d)/'root';(fake/'gallery').mkdir(parents=True)
+    (fake/'gallery/books.json').write_text(json.dumps(data))
+    with patch('build_gallery.ROOT',fake),self.assertRaisesRegex(ValueError,'Incomplete gallery card'):
+     # Put the altered card first, so failure precedes any cover access.
+     (fake/'gallery/books.json').write_text(json.dumps([card]+[b for b in data if b is not card]))
+     build(SOURCE,Path(d)/'site','/')
+ def test_gallery_requires_pdf_and_epub_for_unbundled_cards(self):
+  books=json.loads((ROOT/'gallery/books.json').read_text())
+  for ext in ('pdf','epub'):
+   card=copy.deepcopy(next(b for b in books if 'zip' not in b['files']))
+   del card['files'][ext]
+   with tempfile.TemporaryDirectory() as d:
+    fake=Path(d)/'root';(fake/'gallery').mkdir(parents=True)
+    (fake/'gallery/books.json').write_text(json.dumps([card]))
+    with patch('build_gallery.ROOT',fake),self.assertRaisesRegex(ValueError,'Incomplete gallery card'):
+     build(SOURCE,Path(d)/'site','/')
+ def test_pdf_title_page_provenance_tamper_guards(self):
+  books=json.loads((ROOT/'gallery/books.json').read_text())
+  pdf_covers=[b for b in books if b['cover_source'].get('kind')=='pdf-title-page']
+  self.assertTrue(pdf_covers)
+  for original in pdf_covers:
+   verify_provenance(SOURCE,original)
+   for field,value,message in [('pdf','wrong.pdf','differs from reader PDF'),('pdf_sha256','0'*64,'PDF source hash mismatch'),('sha256','0'*64,'asset hash mismatch'),('page',2,'title page 1'),('page',True,'title page 1'),('kind','unknown','Unknown cover source kind')]:
+    with self.subTest(id=original['id'],field=field):
+     b=copy.deepcopy(original);b['cover_source'][field]=value
+     with self.assertRaisesRegex(ValueError,message):verify_provenance(SOURCE,b)
+ def test_unknown_epub_cover_kind_rejected(self):
+  b=copy.deepcopy(json.loads((ROOT/'gallery/books.json').read_text())[0]);b['cover_source']['kind']='unknown'
+  with self.assertRaisesRegex(ValueError,'Unknown cover source kind'):verify_provenance(SOURCE,b)
  def test_changed_cover_source_rejected(self):
   b=copy.deepcopy(json.loads((ROOT/'gallery/books.json').read_text())[0]);b['cover_source']['sha256']='0'*64
   with self.assertRaisesRegex(ValueError,'Cover source hash mismatch'):verify_provenance(SOURCE,b)

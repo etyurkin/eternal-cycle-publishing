@@ -71,6 +71,56 @@ class FlatCatalogueTests(unittest.TestCase):
         build(self.root)
         verify(self.root)
 
+    def test_optional_bundles_keep_required_readers_without_release_records(self):
+        self.catalog["books"][0]["editions"][0]["bundle"] = False
+        self.save_catalog()
+        _, rows = build(self.root)
+        verify(self.root)
+        self.assertTrue(all(row["archive"] is None for row in rows))
+        self.assertEqual(list(self.root.rglob("*.zip")), [])
+        self.assertEqual(list((self.root / "dist").glob("*.sha256")), [])
+        self.assertEqual(json.loads((self.root / "dist/manifest.json").read_text())["releases"], [])
+        for name in ("README.md", "README.en.md", "README.ru.md"):
+            self.assertNotIn("[ZIP]", (self.root / name).read_text())
+        self.assertEqual(len((self.root / "reader-files.sha256").read_text().splitlines()), 4)
+        (self.root / rows[0]["readers"]["epub"]).unlink()
+        with self.assertRaisesRegex(ValueError, "Missing approved reader pair"):
+            build(self.root)
+
+    def test_bundle_must_be_boolean_even_on_unpublished_editions(self):
+        for value in (None, 0, 1, "false", [], {}):
+            with self.subTest(value=value):
+                self.catalog["books"][0]["editions"][0]["bundle"] = value
+                self.save_catalog()
+                with self.assertRaisesRegex(ValueError, "bundle must be boolean"):
+                    load_catalog(self.root)
+        self.catalog["books"][0]["editions"][0]["bundle"] = True
+        self.catalog["books"][0]["editions"].append(dict(version=2, status="draft", approved_for_publication=False, approved_languages=[], bundle="false"))
+        self.save_catalog()
+        with self.assertRaisesRegex(ValueError, "bundle must be boolean"):
+            load_catalog(self.root)
+
+    def test_mixed_bundles_use_latest_approved_language_independently(self):
+        self.catalog["books"][0]["editions"].append(dict(version=2, status="published", approved_for_publication=True, approved_languages=["en"], bundle=False))
+        self.save_catalog()
+        _, rows = build(self.root)
+        verify(self.root)
+        self.assertEqual({r["language"]: r["archive"] is not None for r in rows}, {"en": False, "ru": True})
+        self.assertEqual(len(list(self.root.rglob("*.zip"))), 1)
+        self.assertEqual(len(json.loads((self.root / "dist/manifest.json").read_text())["releases"]), 1)
+        text = (self.root / "README.en.md").read_text()
+        self.assertIn("ZIP bundles are available only where linked", text)
+        self.assertEqual(text.count("[ZIP]"), 1)
+        build(self.root, check=True)
+
+    def test_disabled_bundle_rejects_existing_zip(self):
+        build(self.root)
+        self.catalog["books"][0]["editions"][0]["bundle"] = False
+        self.save_catalog()
+        _, rows = load_catalog(self.root)
+        with self.assertRaisesRegex(ValueError, "Unexpected/unapproved public file"):
+            validate_tree(self.root, rows, require_zips=True)
+
     def test_missing_pair_fails(self):
         _, rows = load_catalog(self.root)
         (self.root / rows[0]["readers"]["pdf"]).unlink()

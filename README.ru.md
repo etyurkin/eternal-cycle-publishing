@@ -7,9 +7,9 @@ Original covers, short descriptions, and books laid out for reading on your phon
 
 [Home](README.md) · [English](README.en.md) · [Русский](README.ru.md)
 
-Ниже доступны 13 произведений в 14 томах, включая оба тома «Семи королей». Для каждого указанного языка доступны PDF, EPUB и ZIP с обоими форматами.
+Ниже доступны 16 произведений в 17 томах, включая оба тома «Семи королей». Для каждого указанного языка доступны PDF и EPUB. ZIP-комплекты доступны только там, где указана ссылка.
 
-Здесь доступны утверждённые мобильные издания. Страницы PDF имеют удобный для телефона размер 90 × 160 мм; EPUB открывается в приложении-читалке, а ZIP содержит соответствующую пару PDF и EPUB. См. [правила публикации](EDITION_POLICY.md).
+Здесь доступны утверждённые мобильные издания. Страницы PDF имеют удобный для телефона размер 90 × 160 мм; EPUB открывается в приложении-читалке, а доступный ZIP содержит соответствующую пару PDF и EPUB. См. [правила публикации](EDITION_POLICY.md).
 
 ## Детская литература
 
@@ -78,6 +78,25 @@ Café de la Luna · Детская серия · Книга IV · Том 2
 - **English (en) · издание 1**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/standalone/the-last-don-quixote/The%20Last%20Don%20Quixote.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/standalone/the-last-don-quixote/The%20Last%20Don%20Quixote.epub) · [ZIP](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/standalone/the-last-don-quixote/The%20Last%20Don%20Quixote.zip)
 - **Русский (ru) · издание 1**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/standalone/the-last-don-quixote/%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B8%D0%B9%20%D0%94%D0%BE%D0%BD-%D0%9A%D0%B8%D1%85%D0%BE%D1%82.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/standalone/the-last-don-quixote/%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B8%D0%B9%20%D0%94%D0%BE%D0%BD-%D0%9A%D0%B8%D1%85%D0%BE%D1%82.epub) · [ZIP](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/standalone/the-last-don-quixote/%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B8%D0%B9%20%D0%94%D0%BE%D0%BD-%D0%9A%D0%B8%D1%85%D0%BE%D1%82.zip)
 
+### Blueprint. We Made It! / Blueprint. Мы добрались!
+
+Фабрика Абсурдов · Воспоминания
+
+- **English (en) · издание 1**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint.%20We%20Made%20It%21.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint.%20We%20Made%20It%21.epub)
+- **Русский (ru) · издание 1**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint.%20%D0%9C%D1%8B%20%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D0%BB%D0%B8%D1%81%D1%8C%21.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint.%20%D0%9C%D1%8B%20%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D0%BB%D0%B8%D1%81%D1%8C%21.epub)
+
+### The Book of Side Effects / Книга побочных эффектов
+
+Фабрика Абсурдов · Мануал
+
+- **Русский (ru) · издание 1**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/absurdity-factory/book-of-side-effects/%D0%9A%D0%BD%D0%B8%D0%B3%D0%B0%20%D0%BF%D0%BE%D0%B1%D0%BE%D1%87%D0%BD%D1%8B%D1%85%20%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%BE%D0%B2.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/absurdity-factory/book-of-side-effects/%D0%9A%D0%BD%D0%B8%D0%B3%D0%B0%20%D0%BF%D0%BE%D0%B1%D0%BE%D1%87%D0%BD%D1%8B%D1%85%20%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%BE%D0%B2.epub)
+
+### Six Spray Cans That Didn’t Exist / Шесть баллонов, которых не существовало
+
+Фабрика Абсурдов · Кварк и Енот
+
+- **Русский (ru) · издание 1**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/absurdity-factory/six-spray-cans/%D0%A8%D0%B5%D1%81%D1%82%D1%8C%20%D0%B1%D0%B0%D0%BB%D0%BB%D0%BE%D0%BD%D0%BE%D0%B2%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D1%85%20%D0%BD%D0%B5%20%D1%81%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/absurdity-factory/six-spray-cans/%D0%A8%D0%B5%D1%81%D1%82%D1%8C%20%D0%B1%D0%B0%D0%BB%D0%BB%D0%BE%D0%BD%D0%BE%D0%B2%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D1%85%20%D0%BD%D0%B5%20%D1%81%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE.epub)
+
 ## Технологии и образование
 
 ### Introduction to the Programmer’s Profession / Введение в профессию программиста
@@ -85,6 +104,7 @@ Café de la Luna · Детская серия · Книга IV · Том 2
 Обучение программированию
 
 - **English (en) · издание 2**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/education/introduction-to-the-programmers-profession/Introduction%20to%20the%20Programmer%E2%80%99s%20Profession.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/education/introduction-to-the-programmers-profession/Introduction%20to%20the%20Programmer%E2%80%99s%20Profession.epub) · [ZIP](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/education/introduction-to-the-programmers-profession/Introduction%20to%20the%20Programmer%E2%80%99s%20Profession.zip)
+- **Русский (ru) · издание 3**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/education/introduction-to-the-programmers-profession/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D0%BF%D1%80%D0%BE%D1%84%D0%B5%D1%81%D1%81%D0%B8%D1%8E%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%81%D1%82%D0%B0.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/education/introduction-to-the-programmers-profession/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D0%BF%D1%80%D0%BE%D1%84%D0%B5%D1%81%D1%81%D0%B8%D1%8E%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%81%D1%82%D0%B0.epub)
 
 ### Fishing the Stream / Речная рыбалка
 
@@ -97,6 +117,7 @@ Café de la Luna · Детская серия · Книга IV · Том 2
 
 Технологии и проза
 
+- **English (en) · издание 3**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/code-bites/Code%20Bites.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/code-bites/Code%20Bites.epub)
 - **Русский (ru) · издание 2**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/code-bites/%D0%9A%D0%BE%D0%B4%20%D0%BA%D1%83%D1%81%D0%B0%D0%B5%D1%82%D1%81%D1%8F.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/code-bites/%D0%9A%D0%BE%D0%B4%20%D0%BA%D1%83%D1%81%D0%B0%D0%B5%D1%82%D1%81%D1%8F.epub) · [ZIP](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/code-bites/%D0%9A%D0%BE%D0%B4%20%D0%BA%D1%83%D1%81%D0%B0%D0%B5%D1%82%D1%81%D1%8F.zip)
 
 ### Unconscious Programming / Бессознательное программирование

@@ -386,7 +386,8 @@
       "note_en": "Learning to program",
       "note_ru": "Обучение программированию",
       "file_stems": {
-        "en": "Introduction to the Programmer’s Profession"
+        "en": "Introduction to the Programmer’s Profession",
+        "ru": "Введение в профессию программиста"
       },
       "editions": [
         {
@@ -410,6 +411,18 @@
           "approved_languages": [
             "en"
           ]
+        },
+        {
+          "version": 3,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Mobile reading edition",
+          "note_ru": "Издание для чтения с телефона",
+          "approved_languages": [
+            "ru"
+          ],
+          "bundle": false
         }
       ]
     },
@@ -461,7 +474,8 @@
       "note_en": "Technology and fiction",
       "note_ru": "Технологии и проза",
       "file_stems": {
-        "ru": "Код кусается"
+        "ru": "Код кусается",
+        "en": "Code Bites"
       },
       "editions": [
         {
@@ -485,6 +499,18 @@
           "approved_languages": [
             "ru"
           ]
+        },
+        {
+          "version": 3,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Mobile reading edition",
+          "note_ru": "Издание для чтения с телефона",
+          "approved_languages": [
+            "en"
+          ],
+          "bundle": false
         }
       ]
     },
@@ -539,6 +565,94 @@
             "en",
             "ru"
           ]
+        }
+      ]
+    },
+    {
+      "id": "blueprint-we-made-it",
+      "category": "fiction",
+      "series": "absurdity-factory",
+      "title_en": "Blueprint. We Made It!",
+      "title_ru": "Blueprint. Мы добрались!",
+      "note_en": "Absurdity Factory · Recollections",
+      "note_ru": "Фабрика Абсурдов · Воспоминания",
+      "file_stems": {
+        "ru": "Blueprint. Мы добрались!",
+        "en": "Blueprint. We Made It!"
+      },
+      "editions": [
+        {
+          "version": 1,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Mobile reading edition",
+          "note_ru": "Издание для чтения с телефона",
+          "approved_languages": [
+            "en",
+            "ru"
+          ],
+          "bundle": false
+        }
+      ]
+    },
+    {
+      "id": "book-of-side-effects",
+      "category": "fiction",
+      "series": "absurdity-factory",
+      "title_en": "The Book of Side Effects",
+      "title_ru": "Книга побочных эффектов",
+      "note_en": "Absurdity Factory · A manual",
+      "note_ru": "Фабрика Абсурдов · Мануал",
+      "file_stems": {
+        "ru": "Книга побочных эффектов"
+      },
+      "editions": [
+        {
+          "version": 1,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Mobile reading edition",
+          "note_ru": "Издание для чтения с телефона",
+          "approved_languages": [
+            "ru"
+          ],
+          "bundle": false
+        }
+      ],
+      "gallery_cover_ru": {
+        "path": "assets/covers/book-of-side-effects-ru.jpg",
+        "kind": "pdf-title-page",
+        "pdf": "books/fiction/absurdity-factory/book-of-side-effects/Книга побочных эффектов.pdf",
+        "pdf_sha256": "9553d3c66cc2f923f88a6a79dbc98011bc73caa6e2ffec48367615b3c0abf34b",
+        "page": 1,
+        "sha256": "d811422e4caec4ed7201d91c95d0336fb69bb371975381571e7c5742812ef44f"
+      }
+    },
+    {
+      "id": "six-spray-cans",
+      "category": "fiction",
+      "series": "absurdity-factory",
+      "title_en": "Six Spray Cans That Didn’t Exist",
+      "title_ru": "Шесть баллонов, которых не существовало",
+      "note_en": "Absurdity Factory · Kwark and Raccoon",
+      "note_ru": "Фабрика Абсурдов · Кварк и Енот",
+      "file_stems": {
+        "ru": "Шесть баллонов, которых не существовало"
+      },
+      "editions": [
+        {
+          "version": 1,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Mobile reading edition",
+          "note_ru": "Издание для чтения с телефона",
+          "approved_languages": [
+            "ru"
+          ],
+          "bundle": false
         }
       ]
     }

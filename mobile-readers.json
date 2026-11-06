@@ -112,6 +112,39 @@
       ]
     },
     {
+      "relative_path": "books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint. We Made It!.pdf",
+      "language": "en",
+      "pages": 49,
+      "pdf_sha256": "cf685f7788aa1591ba1eed3162e9c26b272deb507202ea7302b441ce5ded0fc1",
+      "bytes": 641833,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint. Мы добрались!.pdf",
+      "language": "ru",
+      "pages": 51,
+      "pdf_sha256": "4f29535add593f3ba5481efc069d4f91fc95c258f9a01b423a5856229dd89816",
+      "bytes": 675207,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/fiction/absurdity-factory/book-of-side-effects/Книга побочных эффектов.pdf",
+      "language": "ru",
+      "pages": 28,
+      "pdf_sha256": "9553d3c66cc2f923f88a6a79dbc98011bc73caa6e2ffec48367615b3c0abf34b",
+      "bytes": 118903,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
       "relative_path": "books/fiction/absurdity-factory/problems-with-chronology/Problems with Chronology.pdf",
       "language": "en",
       "pages": 66,
@@ -128,6 +161,17 @@
       "pages": 77,
       "pdf_sha256": "830dbb0102e472e028d0b46bede4b0f52b7a8a4211d1c3b790c948582898a3f8",
       "bytes": 466082,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/fiction/absurdity-factory/six-spray-cans/Шесть баллонов, которых не существовало.pdf",
+      "language": "ru",
+      "pages": 29,
+      "pdf_sha256": "464e59bcae061031361f7b82e4ab6bb5b3624f19b1e31391fcbc48a56bf6f90d",
+      "bytes": 848238,
       "page_size_mm": [
         90,
         160
@@ -227,6 +271,28 @@
       "pages": 1091,
       "pdf_sha256": "34e81e8a69172b336160ef48f45427b7d911ca93b0162af9f90ced344ff7df89",
       "bytes": 6019317,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/technology/education/introduction-to-the-programmers-profession/Введение в профессию программиста.pdf",
+      "language": "ru",
+      "pages": 1037,
+      "pdf_sha256": "32c8cbb2e83f3f4663d004ef2a0eedc709d98a08ae5921f16c08a3daeef128c1",
+      "bytes": 8620154,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/technology/other/code-bites/Code Bites.pdf",
+      "language": "en",
+      "pages": 54,
+      "pdf_sha256": "be7dc7e2b3f54d0b5ea20d47b96d258fb88f7260c19e792b87397307485b250b",
+      "bytes": 729735,
       "page_size_mm": [
         90,
         160

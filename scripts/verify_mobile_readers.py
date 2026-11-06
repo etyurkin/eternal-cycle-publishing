@@ -67,7 +67,8 @@ def verify(root=ROOT):
         if item["language"] != row["language"]:
             raise ValueError("Approved mobile reader language mismatch: " + path)
         validate_pdf_bytes((root / path).read_bytes(), item)
-        validate_zip(root, row)
+        if row["archive"] is not None:
+            validate_zip(root, row)
         total += item["pages"]
     return len(records), total
 

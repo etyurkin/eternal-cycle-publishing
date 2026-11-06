@@ -7,9 +7,9 @@ Original covers, short descriptions, and books laid out for reading on your phon
 
 [Home](README.md) · [English](README.en.md) · [Русский](README.ru.md)
 
-13 works in 14 volumes are available below, including both volumes of Seven Kings. Every listed language edition has PDF, EPUB and a ZIP containing both.
+16 works in 17 volumes are available below, including both volumes of Seven Kings. Every listed language edition has PDF and EPUB. ZIP bundles are available only where linked.
 
-These are the approved mobile reading editions. PDF pages use a 90 × 160 mm phone-friendly layout; EPUBs work with reading apps, and each ZIP contains its matching PDF and EPUB. See the [edition policy](EDITION_POLICY.md).
+These are the approved mobile reading editions. PDF pages use a 90 × 160 mm phone-friendly layout; EPUBs work with reading apps, and each available ZIP contains its matching PDF and EPUB. See the [edition policy](EDITION_POLICY.md).
 
 ## Children’s literature
 
@@ -78,6 +78,25 @@ Philosophical fiction
 - **English (en) · edition 1**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/standalone/the-last-don-quixote/The%20Last%20Don%20Quixote.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/standalone/the-last-don-quixote/The%20Last%20Don%20Quixote.epub) · [ZIP](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/standalone/the-last-don-quixote/The%20Last%20Don%20Quixote.zip)
 - **Русский (ru) · edition 1**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/standalone/the-last-don-quixote/%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B8%D0%B9%20%D0%94%D0%BE%D0%BD-%D0%9A%D0%B8%D1%85%D0%BE%D1%82.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/standalone/the-last-don-quixote/%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B8%D0%B9%20%D0%94%D0%BE%D0%BD-%D0%9A%D0%B8%D1%85%D0%BE%D1%82.epub) · [ZIP](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/standalone/the-last-don-quixote/%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B8%D0%B9%20%D0%94%D0%BE%D0%BD-%D0%9A%D0%B8%D1%85%D0%BE%D1%82.zip)
 
+### Blueprint. We Made It! / Blueprint. Мы добрались!
+
+Absurdity Factory · Recollections
+
+- **English (en) · edition 1**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint.%20We%20Made%20It%21.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint.%20We%20Made%20It%21.epub)
+- **Русский (ru) · edition 1**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint.%20%D0%9C%D1%8B%20%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D0%BB%D0%B8%D1%81%D1%8C%21.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint.%20%D0%9C%D1%8B%20%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D0%BB%D0%B8%D1%81%D1%8C%21.epub)
+
+### The Book of Side Effects / Книга побочных эффектов
+
+Absurdity Factory · A manual
+
+- **Русский (ru) · edition 1**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/absurdity-factory/book-of-side-effects/%D0%9A%D0%BD%D0%B8%D0%B3%D0%B0%20%D0%BF%D0%BE%D0%B1%D0%BE%D1%87%D0%BD%D1%8B%D1%85%20%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%BE%D0%B2.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/absurdity-factory/book-of-side-effects/%D0%9A%D0%BD%D0%B8%D0%B3%D0%B0%20%D0%BF%D0%BE%D0%B1%D0%BE%D1%87%D0%BD%D1%8B%D1%85%20%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%BE%D0%B2.epub)
+
+### Six Spray Cans That Didn’t Exist / Шесть баллонов, которых не существовало
+
+Absurdity Factory · Kwark and Raccoon
+
+- **Русский (ru) · edition 1**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/absurdity-factory/six-spray-cans/%D0%A8%D0%B5%D1%81%D1%82%D1%8C%20%D0%B1%D0%B0%D0%BB%D0%BB%D0%BE%D0%BD%D0%BE%D0%B2%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D1%85%20%D0%BD%D0%B5%20%D1%81%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/fiction/absurdity-factory/six-spray-cans/%D0%A8%D0%B5%D1%81%D1%82%D1%8C%20%D0%B1%D0%B0%D0%BB%D0%BB%D0%BE%D0%BD%D0%BE%D0%B2%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D1%85%20%D0%BD%D0%B5%20%D1%81%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE.epub)
+
 ## Technology & learning
 
 ### Introduction to the Programmer’s Profession / Введение в профессию программиста
@@ -85,6 +104,7 @@ Philosophical fiction
 Learning to program
 
 - **English (en) · edition 2**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/education/introduction-to-the-programmers-profession/Introduction%20to%20the%20Programmer%E2%80%99s%20Profession.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/education/introduction-to-the-programmers-profession/Introduction%20to%20the%20Programmer%E2%80%99s%20Profession.epub) · [ZIP](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/education/introduction-to-the-programmers-profession/Introduction%20to%20the%20Programmer%E2%80%99s%20Profession.zip)
+- **Русский (ru) · edition 3**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/education/introduction-to-the-programmers-profession/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D0%BF%D1%80%D0%BE%D1%84%D0%B5%D1%81%D1%81%D0%B8%D1%8E%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%81%D1%82%D0%B0.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/education/introduction-to-the-programmers-profession/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D0%BF%D1%80%D0%BE%D1%84%D0%B5%D1%81%D1%81%D0%B8%D1%8E%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%81%D1%82%D0%B0.epub)
 
 ### Fishing the Stream / Речная рыбалка
 
@@ -97,6 +117,7 @@ Reflective nonfiction
 
 Technology and fiction
 
+- **English (en) · edition 3**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/code-bites/Code%20Bites.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/code-bites/Code%20Bites.epub)
 - **Русский (ru) · edition 2**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/code-bites/%D0%9A%D0%BE%D0%B4%20%D0%BA%D1%83%D1%81%D0%B0%D0%B5%D1%82%D1%81%D1%8F.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/code-bites/%D0%9A%D0%BE%D0%B4%20%D0%BA%D1%83%D1%81%D0%B0%D0%B5%D1%82%D1%81%D1%8F.epub) · [ZIP](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/code-bites/%D0%9A%D0%BE%D0%B4%20%D0%BA%D1%83%D1%81%D0%B0%D0%B5%D1%82%D1%81%D1%8F.zip)
 
 ### Unconscious Programming / Бессознательное программирование

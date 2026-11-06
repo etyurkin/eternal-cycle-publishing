@@ -2,8 +2,9 @@
 """Discover approved books in catalog.json and create missing gallery cards.
 
 Keeps hand-edited existing descriptions and images unchanged. Newly approved
-language editions need a mobile PDF, EPUB with a real cover, and catalogue
-publication approval. Draft/private material is never shown.
+language editions need a mobile PDF, EPUB, and catalogue publication approval.
+Covers come from the EPUB unless an explicit, hash-pinned PDF title-page
+derivative is approved in the catalogue. Draft/private material is never shown.
 """
 import html
 import hashlib
@@ -34,7 +35,7 @@ def safe_epub_member(base, name):
     return member
 
 
-def cover_and_chapters(path):
+def cover_and_chapters(path, require_cover=True):
     with zipfile.ZipFile(path) as archive:
         names = set(archive.namelist())
         root = ET.fromstring(archive.read("META-INF/container.xml"))
@@ -69,16 +70,17 @@ def cover_and_chapters(path):
                              if re.search(r"(?:^|/)(?:cover|frontcover)(?:[_-].*)?\.(?:png|jpe?g)$",
                                           x["name"], re.I)),
                             key=lambda x: len(x["name"]))
-        if not covers:
+        if not covers and require_cover:
             raise ValueError("Approved EPUB has no embedded cover: " + str(path))
-        cover = covers[0]
-        name = cover["name"]
-        ext = Path(name).suffix.lower()
-        if ext not in (".png", ".jpg", ".jpeg") or name not in names:
-            raise ValueError("Approved EPUB cover must be an embedded PNG/JPEG: " + str(path))
-        cover_bytes = archive.read(name)
-        if not cover_bytes.startswith(b"\x89PNG\r\n\x1a\n") and not cover_bytes.startswith(b"\xff\xd8"):
-            raise ValueError("Invalid image bytes for EPUB cover: " + name)
+        name, cover_bytes = None, None
+        if covers:
+            name = covers[0]["name"]
+            ext = Path(name).suffix.lower()
+            if ext not in (".png", ".jpg", ".jpeg") or name not in names:
+                raise ValueError("Approved EPUB cover must be an embedded PNG/JPEG: " + str(path))
+            cover_bytes = archive.read(name)
+            if not cover_bytes.startswith(b"\x89PNG\r\n\x1a\n") and not cover_bytes.startswith(b"\xff\xd8"):
+                raise ValueError("Invalid image bytes for EPUB cover: " + name)
 
         chapters = []
         for spine_ref in pkg.findall("./opf:spine/opf:itemref", NS):
@@ -108,6 +110,38 @@ def cover_and_chapters(path):
         return name, cover_bytes, chapters, description
 
 
+def approved_pdf_cover(root, row):
+    """Read only an explicitly approved, already-rendered public title page."""
+    config = row["book"].get("gallery_cover_" + row["language"])
+    if not isinstance(config, dict) or set(config) != {
+            "path", "kind", "pdf", "pdf_sha256", "page", "sha256"}:
+        raise ValueError("Invalid explicit PDF title-page cover approval")
+    if config["kind"] != "pdf-title-page" or type(config["page"]) is not int or config["page"] != 1:
+        raise ValueError("PDF cover must use title page 1")
+    if config["pdf"] != row["readers"]["pdf"].as_posix():
+        raise ValueError("Cover provenance differs from reader PDF")
+    relative = config["path"]
+    if (not isinstance(relative, str) or not relative.startswith("assets/covers/")
+            or "\\" in relative or ".." in Path(relative).parts
+            or Path(relative).suffix not in (".jpg", ".png")):
+        raise ValueError("Unsafe approved PDF cover path")
+    cover_path = root / "gallery" / relative
+    pdf_path = root / config["pdf"]
+    for path in (cover_path, pdf_path):
+        if (path.is_symlink() or not path.is_file()
+                or not path.resolve().is_relative_to(root.resolve())
+                or any(p.is_symlink() for p in path.parents)):
+            raise ValueError("Missing or unsafe approved PDF cover source: " + str(path))
+    data = cover_path.read_bytes()
+    if not data.startswith(b"\x89PNG\r\n\x1a\n") and not data.startswith(b"\xff\xd8"):
+        raise ValueError("Invalid image bytes for PDF title-page cover")
+    if hashlib.sha256(pdf_path.read_bytes()).hexdigest() != config["pdf_sha256"]:
+        raise ValueError("Cover PDF source hash mismatch")
+    if hashlib.sha256(data).hexdigest() != config["sha256"]:
+        raise ValueError("Cover asset hash mismatch")
+    return relative, data, {key: value for key, value in config.items() if key != "path"}
+
+
 def sync(root=ROOT):
     root = Path(root).resolve()
     catalog, rows = load_catalog(root)
@@ -129,14 +163,24 @@ def sync(root=ROOT):
         if pair in by_pair:
             continue
         reader_files = {ext: row["readers"][ext].as_posix() for ext in ("pdf", "epub")}
-        reader_files["zip"] = row["archive"].as_posix()
+        if row["archive"] is not None:
+            reader_files["zip"] = row["archive"].as_posix()
         for ext in ("pdf", "epub"):
             candidate = root / reader_files[ext]
             if not candidate.is_file() or candidate.is_symlink():
                 raise ValueError("Missing approved reader for gallery: " + str(candidate))
-        member, data, chapters, embedded_description = cover_and_chapters(root / reader_files["epub"])
-        suffix = ".jpg" if member.lower().endswith((".jpg", ".jpeg")) else ".png"
-        cover_rel = "assets/covers/" + book["id"] + "-" + lang + suffix
+        explicit_cover = "gallery_cover_" + lang in book
+        member, data, chapters, embedded_description = cover_and_chapters(
+            root / reader_files["epub"], require_cover=not explicit_cover)
+        if explicit_cover:
+            if member is not None:
+                raise ValueError("PDF title-page fallback is only for an EPUB without an embedded cover")
+            cover_rel, data, cover_source = approved_pdf_cover(root, row)
+        else:
+            suffix = ".jpg" if member.lower().endswith((".jpg", ".jpeg")) else ".png"
+            cover_rel = "assets/covers/" + book["id"] + "-" + lang + suffix
+            cover_source = {"epub": reader_files["epub"], "member": member,
+                            "sha256": hashlib.sha256(data).hexdigest()}
         cover_path = root / "gallery" / cover_rel
         if cover_path.is_symlink():
             raise ValueError("Unsafe cover output: " + str(cover_path))
@@ -158,11 +202,7 @@ def sync(root=ROOT):
             "note": book["note_" + lang],
             "category": book["category"],
             "cover": cover_rel,
-            "cover_source": {
-                "epub": reader_files["epub"],
-                "member": member,
-                "sha256": hashlib.sha256(data).hexdigest()
-            },
+            "cover_source": cover_source,
             "files": reader_files,
             "description": description,
             "description_source": {

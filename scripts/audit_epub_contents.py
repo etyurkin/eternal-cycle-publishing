@@ -16,6 +16,7 @@ from zipfile import ZipFile, BadZipFile
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from catalog_common import load_catalog
+from build_gallery import verify_provenance
 
 CONTAINER_NS = "{urn:oasis:names:tc:opendocument:xmlns:container}"
 OPF_NS = "{http://www.idpf.org/2007/opf}"
@@ -90,12 +91,19 @@ def check(epub, title, lang, cover_source):
             issues.append("Missing title metadata")
         elif not any(len(v.strip()) > 2 for v in titlevalues):
             issues.append("Empty title metadata")
-        cover = cover_source["member"]
-        if cover not in nset:
-            issues.append("Gallery-selected cover missing from EPUB: " + cover)
+        cover_kind = cover_source.get("kind", "epub")
+        if cover_kind == "epub":
+            cover = cover_source["member"]
+            if cover not in nset:
+                issues.append("Gallery-selected cover missing from EPUB: " + cover)
+        elif cover_kind != "pdf-title-page":
+            issues.append("Unknown gallery cover source kind: " + str(cover_kind))
         images = [k for k, (_, mt, _) in manifest.items() if mt.startswith("image/")]
         if not images:
-            issues.append("No images declared in EPUB manifest")
+            if cover_kind == "pdf-title-page":
+                warnings.append("No EPUB images; gallery uses explicitly approved PDF title page")
+            else:
+                issues.append("No images declared in EPUB manifest")
         missing_in_xhtml, xhtml_count, nonspace_characters = [], 0, 0
         for path in pages:
             if path not in nset:
@@ -133,13 +141,15 @@ def check(epub, title, lang, cover_source):
 def main():
     catalog, selected = load_catalog(ROOT)
     gallery = json.loads((ROOT/"gallery/books.json").read_text(encoding="utf-8"))
-    cover_by = {(b["id"], b["language"]):b["cover_source"] for b in gallery}
+    card_by = {(b["id"], b["language"]):b for b in gallery}
     failures=0
     print("READ-ONLY AUDIT of", len(selected), "published EPUB editions")
     for row in selected:
         b=row["book"]; lang=row["language"]; path=ROOT/row["readers"]["epub"]
         try:
-            issues, warnings, sections, chars = check(path,b["file_stems"][lang],lang,cover_by[b["id"],lang])
+            card = card_by[b["id"],lang]
+            verify_provenance(ROOT, card)
+            issues, warnings, sections, chars = check(path,b["file_stems"][lang],lang,card["cover_source"])
         except Exception as ex:
             issues, warnings, sections, chars = [type(ex).__name__+": "+str(ex)], [], 0, 0
         result="FAIL" if issues else "OK"

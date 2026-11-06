@@ -15,8 +15,9 @@ def verify(root=ROOT):
     if (root / "reader-files.sha256").read_text(encoding="utf-8") != expected_checks:
         raise ValueError("Reader checksum list is missing, stale, or contains unexpected paths")
     for row in selected:
-        validate_zip(root, row)
-    expected_targets = {p.as_posix() for row in selected for p in (*row["readers"].values(), row["archive"])}
+        if row["archive"] is not None:
+            validate_zip(root, row)
+    expected_targets = {p.as_posix() for row in selected for p in (*row["readers"].values(), row["archive"]) if p is not None}
     total_links = 0
     for path, expected in readme_texts(catalog, selected).items():
         text = (root / path).read_text(encoding="utf-8")
@@ -39,7 +40,7 @@ def verify(root=ROOT):
         if set(seen) != expected_targets or len(seen) != len(expected_targets):
             raise ValueError("README must link every current PDF, EPUB and ZIP exactly once: " + str(path))
         total_links += len(seen)
-    print(f"Verified {len(readers)} reader containers and hashes, {len(selected)} ZIPs with CRC/member hashes, and {total_links} current download links across 3 English-first indexes.")
+    print(f"Verified {len(readers)} reader containers and hashes, {sum(row['archive'] is not None for row in selected)} ZIPs with CRC/member hashes, and {total_links} current download links across 3 English-first indexes.")
 
 
 if __name__ == "__main__":

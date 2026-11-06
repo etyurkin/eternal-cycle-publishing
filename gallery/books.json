@@ -507,6 +507,30 @@
     }
   },
   {
+    "id": "introduction-to-the-programmers-profession",
+    "language": "ru",
+    "title": "Введение в профессию программиста",
+    "note": "Обучение программированию",
+    "category": "technology",
+    "cover": "assets/covers/introduction-to-the-programmers-profession-ru.jpg",
+    "cover_source": {
+      "epub": "books/technology/education/introduction-to-the-programmers-profession/Введение в профессию программиста.epub",
+      "member": "EPUB/media/cover-ru.jpg",
+      "sha256": "168e72859f3a9050ac1f8a0b0db226f787a605aa3226a36e9cf77a44a0f04a9e"
+    },
+    "files": {
+      "pdf": "books/technology/education/introduction-to-the-programmers-profession/Введение в профессию программиста.pdf",
+      "epub": "books/technology/education/introduction-to-the-programmers-profession/Введение в профессию программиста.epub"
+    },
+    "description": "Полгода практики с Java и Common Lisp на воображаемой станции «МОДУЛЬ». Занятия, ошибки и работающий код помогают подготовиться к первой работе программистом.",
+    "description_source": {
+      "epub": "books/technology/education/introduction-to-the-programmers-profession/Введение в профессию программиста.epub",
+      "chapters": [
+        "EPUB/text/ch003.xhtml"
+      ]
+    }
+  },
+  {
     "id": "fishing-the-stream",
     "language": "en",
     "title": "Fishing the Stream",
@@ -557,6 +581,33 @@
         "EPUB/text/ch001.xhtml",
         "EPUB/text/ch002.xhtml",
         "EPUB/text/ch003.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "code-bites",
+    "language": "en",
+    "title": "Code Bites",
+    "note": "Technology and fiction",
+    "category": "technology",
+    "cover": "assets/covers/code-bites-en.png",
+    "cover_source": {
+      "epub": "books/technology/other/code-bites/Code Bites.epub",
+      "member": "EPUB/media/code-bites-cover-en-final.png",
+      "sha256": "ff096705138719ce6381f618a45a61e81c22094422a55ad7eb1283a9b3e77bc7"
+    },
+    "files": {
+      "pdf": "books/technology/other/code-bites/Code Bites.pdf",
+      "epub": "books/technology/other/code-bites/Code Bites.epub"
+    },
+    "description": "A consulting trip to Hyderabad becomes a story about teams, stand-ups, and discovering a city on foot. A rubber ball changes who listens to whom at work.",
+    "description_source": {
+      "epub": "books/technology/other/code-bites/Code Bites.epub",
+      "chapters": [
+        "EPUB/text/ch003.xhtml",
+        "EPUB/text/ch004.xhtml",
+        "EPUB/text/ch005.xhtml",
+        "EPUB/text/ch006.xhtml"
       ]
     }
   },
@@ -696,6 +747,106 @@
       "epub": "books/technology/other/unconscious-programming/Бессознательное программирование.epub",
       "chapters": [
         "EPUB/text/book.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "blueprint-we-made-it",
+    "language": "en",
+    "title": "Blueprint. We Made It!",
+    "note": "Absurdity Factory · Recollections",
+    "category": "fiction",
+    "cover": "assets/covers/blueprint-we-made-it-en.png",
+    "cover_source": {
+      "epub": "books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint. We Made It!.epub",
+      "member": "OEBPS/cover.png",
+      "sha256": "b9fb80d985a4b54c240d3d0a014f52c162151773e5eb022a6da2a022053aca0d"
+    },
+    "files": {
+      "pdf": "books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint. We Made It!.pdf",
+      "epub": "books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint. We Made It!.epub"
+    },
+    "description": "Memories of Blueprint Systems, the move from Java to .NET, and teams in St. Petersburg and Toronto. A story about how a product’s memory lives in people, trust, and their relationships.",
+    "description_source": {
+      "epub": "books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint. We Made It!.epub",
+      "chapters": [
+        "OEBPS/content.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "blueprint-we-made-it",
+    "language": "ru",
+    "title": "Blueprint. Мы добрались!",
+    "note": "Фабрика Абсурдов · Воспоминания",
+    "category": "fiction",
+    "cover": "assets/covers/blueprint-we-made-it-ru.png",
+    "cover_source": {
+      "epub": "books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint. Мы добрались!.epub",
+      "member": "OEBPS/cover.png",
+      "sha256": "7d492ea3276bc56db8efb8419438c728cb90ca0eeeef45bc637683914b730866"
+    },
+    "files": {
+      "pdf": "books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint. Мы добрались!.pdf",
+      "epub": "books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint. Мы добрались!.epub"
+    },
+    "description": "Воспоминания о Blueprint Systems, переходе с Java на .NET и командах в Петербурге и Торонто. История о том, как память продукта живёт в людях, доверии и отношениях между ними.",
+    "description_source": {
+      "epub": "books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint. Мы добрались!.epub",
+      "chapters": [
+        "OEBPS/content.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "book-of-side-effects",
+    "language": "ru",
+    "title": "Книга побочных эффектов",
+    "note": "Фабрика Абсурдов · Мануал",
+    "category": "fiction",
+    "cover": "assets/covers/book-of-side-effects-ru.jpg",
+    "cover_source": {
+      "kind": "pdf-title-page",
+      "pdf": "books/fiction/absurdity-factory/book-of-side-effects/Книга побочных эффектов.pdf",
+      "pdf_sha256": "9553d3c66cc2f923f88a6a79dbc98011bc73caa6e2ffec48367615b3c0abf34b",
+      "page": 1,
+      "sha256": "d811422e4caec4ed7201d91c95d0336fb69bb371975381571e7c5742812ef44f"
+    },
+    "files": {
+      "pdf": "books/fiction/absurdity-factory/book-of-side-effects/Книга побочных эффектов.pdf",
+      "epub": "books/fiction/absurdity-factory/book-of-side-effects/Книга побочных эффектов.epub"
+    },
+    "description": "Абсурдный мануал фабрики, который запрещает читать себя по порядку. Читатель пытается восстановить сюжет, а кот ищет условие выхода из бесконечного цикла.",
+    "description_source": {
+      "epub": "books/fiction/absurdity-factory/book-of-side-effects/Книга побочных эффектов.epub",
+      "chapters": [
+        "EPUB/text/ch001.xhtml",
+        "EPUB/text/ch002.xhtml",
+        "EPUB/text/ch003.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "six-spray-cans",
+    "language": "ru",
+    "title": "Шесть баллонов, которых не существовало",
+    "note": "Фабрика Абсурдов · Кварк и Енот",
+    "category": "fiction",
+    "cover": "assets/covers/six-spray-cans-ru.png",
+    "cover_source": {
+      "epub": "books/fiction/absurdity-factory/six-spray-cans/Шесть баллонов, которых не существовало.epub",
+      "member": "EPUB/media/a_detailed_cinematic_photo_illustration_style_bo.png",
+      "sha256": "105f03b91dbc34caf9b811de8146ef9ad9c39146ce226d3ca65ad7cda53d9512"
+    },
+    "files": {
+      "pdf": "books/fiction/absurdity-factory/six-spray-cans/Шесть баллонов, которых не существовало.pdf",
+      "epub": "books/fiction/absurdity-factory/six-spray-cans/Шесть баллонов, которых не существовало.epub"
+    },
+    "description": "Енот превращает старый молочный проём в необычный почтовый ящик и отправляется за аэрозольным шеллаком. Кварк уверен, что таких баллонов в магазине никогда не было.",
+    "description_source": {
+      "epub": "books/fiction/absurdity-factory/six-spray-cans/Шесть баллонов, которых не существовало.epub",
+      "chapters": [
+        "EPUB/text/ch001.xhtml"
       ]
     }
   }

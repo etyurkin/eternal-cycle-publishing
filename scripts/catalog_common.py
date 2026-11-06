@@ -75,6 +75,8 @@ def load_catalog(root=ROOT):
             stems.add(stem.casefold())
         versions, latest = set(), {}
         for edition in book["editions"]:
+            if type(edition.get("bundle", True)) is not bool:
+                raise ValueError("Edition bundle must be boolean: " + bid)
             version = edition["version"]
             if type(version) is not int or version <= 0 or version in versions:
                 raise ValueError("Invalid or duplicate edition: " + bid)
@@ -104,7 +106,7 @@ def load_catalog(root=ROOT):
             name = localized[language]
             selected.append(dict(book=book, edition=edition, language=language, base=base,
                                  readers={ext: base / f"{name}.{ext}" for ext in FORMATS},
-                                 archive=base / f"{name}.zip",
+                                 archive=base / f"{name}.zip" if edition.get("bundle", True) else None,
                                  tag=f"book-{bid}-v{edition['version']}-{language}"))
     if not selected:
         raise ValueError("No approved reading editions")
@@ -114,7 +116,7 @@ def load_catalog(root=ROOT):
 def validate_tree(root, selected, require_zips=False):
     """Allow only known flat readers/ZIPs; reject leftovers and symlinks."""
     readers = {p for row in selected for p in row["readers"].values()}
-    archives = {row["archive"] for row in selected}
+    archives = {row["archive"] for row in selected if row["archive"] is not None}
     expected = readers | archives
     allowed_dirs = {p for f in expected for p in f.parents if p != Path(".")}
     books = root / "books"

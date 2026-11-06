@@ -49,7 +49,8 @@ def book_lines(catalog, book, selected, language="en"):
         if row["book"]["id"] != book["id"]:
             continue
         links = [f"[{ext.upper()}]({raw_link(row['readers'][ext])})" for ext in FORMATS]
-        links.append(f"[ZIP]({raw_link(row['archive'])})")
+        if row["archive"] is not None:
+            links.append(f"[ZIP]({raw_link(row['archive'])})")
         lang = row["language"]
         label = catalog["language_codes"][lang]
         version = row["edition"]["version"]
@@ -66,6 +67,11 @@ def readme_texts(catalog, selected):
     counts_ru = f"Ниже доступны {works} произведений в {len(books)} томах, включая оба тома «Семи королей». Для каждого указанного языка доступны PDF, EPUB и ZIP с обоими форматами."
     history_en = "These are the approved mobile reading editions. PDF pages use a 90 × 160 mm phone-friendly layout; EPUBs work with reading apps, and each ZIP contains its matching PDF and EPUB. See the [edition policy](EDITION_POLICY.md)."
     history_ru = "Здесь доступны утверждённые мобильные издания. Страницы PDF имеют удобный для телефона размер 90 × 160 мм; EPUB открывается в приложении-читалке, а ZIP содержит соответствующую пару PDF и EPUB. См. [правила публикации](EDITION_POLICY.md)."
+    if any(row["archive"] is None for row in selected):
+        counts_en = f"{works} works in {len(books)} volumes are available below, including both volumes of Seven Kings. Every listed language edition has PDF and EPUB. ZIP bundles are available only where linked."
+        counts_ru = f"Ниже доступны {works} произведений в {len(books)} томах, включая оба тома «Семи королей». Для каждого указанного языка доступны PDF и EPUB. ZIP-комплекты доступны только там, где указана ссылка."
+        history_en = history_en.replace("and each ZIP contains", "and each available ZIP contains")
+        history_ru = history_ru.replace("а ZIP содержит", "а доступный ZIP содержит")
     root = ["# Eternal Cycle Publishing · Вечный цикл", "", FRONT_DOOR, "", INTRO_EN.rstrip(), "", NAV, "", "## Download books · Скачать книги", "", counts_en, counts_ru, ""]
     for book in books:
         root.extend(book_lines(catalog, book, selected))
@@ -112,14 +118,17 @@ def build(root=ROOT, check=False):
             target.write_bytes(data)
 
     for row in selected:
-        archive_data = zip_bytes(root, row)
-        emit(row["archive"], archive_data)
+        if row["archive"] is not None:
+            archive_data = zip_bytes(root, row)
+            emit(row["archive"], archive_data)
         reader_records = []
         for extension in FORMATS:
             path = row["readers"][extension]
             record = file_record(path, (root / path).read_bytes(), format=extension)
             reader_records.append(record)
             checks.append(f"{record['sha256']}  {path.as_posix()}")
+        if row["archive"] is None:
+            continue
         archive_record = file_record(row["archive"], archive_data)
         checksum_path = Path("dist") / f"{row['archive'].stem}.sha256"
         checksum_data = ("\n".join(f"{r['sha256']}  {r['name']}" for r in reader_records + [archive_record]) + "\n").encode()
@@ -137,7 +146,7 @@ def build(root=ROOT, check=False):
     (out / "manifest.json").write_text(json.dumps(dict(schema=3, releases=releases), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if stale:
         raise ValueError("Generated files need rebuilding before commit: " + ", ".join(stale))
-    print(f"{'Checked' if check else 'Built'} {len(selected)} language editions, {2 * len(selected)} readers and {len(selected)} adjacent ZIPs.")
+    print(f"{'Checked' if check else 'Built'} {len(selected)} language editions, {2 * len(selected)} readers and {sum(row['archive'] is not None for row in selected)} adjacent ZIPs.")
     return catalog, selected
 
 
