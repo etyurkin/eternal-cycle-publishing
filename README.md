@@ -17,8 +17,8 @@ Eternal Cycle Publishing is an independent bilingual publishing project spanning
 
 ## Download books · Скачать книги
 
-12 works in 13 volumes are available below, including both volumes of Seven Kings. Every listed language edition has PDF, EPUB and a ZIP containing both.
-Ниже доступны 12 произведений в 13 томах, включая оба тома «Семи королей». Для каждого указанного языка доступны PDF, EPUB и ZIP с обоими форматами.
+13 works in 14 volumes are available below, including both volumes of Seven Kings. Every listed language edition has PDF, EPUB and a ZIP containing both.
+Ниже доступны 13 произведений в 14 томах, включая оба тома «Семи королей». Для каждого указанного языка доступны PDF, EPUB и ZIP с обоими форматами.
 
 ### A Dot Above the Sand / Точка над песком
 
@@ -108,6 +108,13 @@ Place, intention, and shared harmony
 
 - **English (en) · edition 1**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/ideas/intent-machines/philosophy-of-intent-machines/The%20Philosophy%20of%20Intent%20Machines.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/ideas/intent-machines/philosophy-of-intent-machines/The%20Philosophy%20of%20Intent%20Machines.epub) · [ZIP](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/ideas/intent-machines/philosophy-of-intent-machines/The%20Philosophy%20of%20Intent%20Machines.zip)
 - **Русский (ru) · edition 1**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/ideas/intent-machines/philosophy-of-intent-machines/%D0%A4%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D0%B8%D1%8F%20%D0%9C%D0%B0%D1%88%D0%B8%D0%BD%20%D0%9D%D0%B0%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D1%8F.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/ideas/intent-machines/philosophy-of-intent-machines/%D0%A4%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D0%B8%D1%8F%20%D0%9C%D0%B0%D1%88%D0%B8%D0%BD%20%D0%9D%D0%B0%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D1%8F.epub) · [ZIP](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/ideas/intent-machines/philosophy-of-intent-machines/%D0%A4%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D0%B8%D1%8F%20%D0%9C%D0%B0%D1%88%D0%B8%D0%BD%20%D0%9D%D0%B0%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D1%8F.zip)
+
+### Unconscious Programming / Бессознательное программирование
+
+Café de la Luna · Research Series · Book I
+
+- **English (en) · edition 1**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/unconscious-programming/Unconscious%20Programming.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/unconscious-programming/Unconscious%20Programming.epub) · [ZIP](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/unconscious-programming/Unconscious%20Programming.zip)
+- **Русский (ru) · edition 1**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/unconscious-programming/%D0%91%D0%B5%D1%81%D1%81%D0%BE%D0%B7%D0%BD%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/unconscious-programming/%D0%91%D0%B5%D1%81%D1%81%D0%BE%D0%B7%D0%BD%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.epub) · [ZIP](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/unconscious-programming/%D0%91%D0%B5%D1%81%D1%81%D0%BE%D0%B7%D0%BD%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.zip)
 
 ### Publication notes · Состояние изданий
 

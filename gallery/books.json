@@ -648,5 +648,55 @@
         "EPUB/text/ch011.xhtml"
       ]
     }
+  },
+  {
+    "id": "unconscious-programming",
+    "language": "en",
+    "title": "Unconscious Programming",
+    "note": "Café de la Luna · Research Series · Book I",
+    "category": "technology",
+    "cover": "assets/covers/unconscious-programming-en.png",
+    "cover_source": {
+      "epub": "books/technology/other/unconscious-programming/Unconscious Programming.epub",
+      "member": "EPUB/images/cover.png",
+      "sha256": "b105db317c22a1fd823525c9c40dcbdf1e0eaca65c7824db8445cfb4da75097d"
+    },
+    "files": {
+      "pdf": "books/technology/other/unconscious-programming/Unconscious Programming.pdf",
+      "epub": "books/technology/other/unconscious-programming/Unconscious Programming.epub",
+      "zip": "books/technology/other/unconscious-programming/Unconscious Programming.zip"
+    },
+    "description": "An inquiry into what experienced programmers acquire beyond syntax: tacit knowledge, intuition, collaboration with AI, and the ability to sense when a question is wrong.",
+    "description_source": {
+      "epub": "books/technology/other/unconscious-programming/Unconscious Programming.epub",
+      "chapters": [
+        "EPUB/text/book.xhtml"
+      ]
+    }
+  },
+  {
+    "id": "unconscious-programming",
+    "language": "ru",
+    "title": "Бессознательное программирование",
+    "note": "Café de la Luna · Исследовательская серия · Книга I",
+    "category": "technology",
+    "cover": "assets/covers/unconscious-programming-ru.png",
+    "cover_source": {
+      "epub": "books/technology/other/unconscious-programming/Бессознательное программирование.epub",
+      "member": "EPUB/images/cover.png",
+      "sha256": "849e87e7be7061f69941c12090511fd587e02626e6038fb2fabbf4627696e047"
+    },
+    "files": {
+      "pdf": "books/technology/other/unconscious-programming/Бессознательное программирование.pdf",
+      "epub": "books/technology/other/unconscious-programming/Бессознательное программирование.epub",
+      "zip": "books/technology/other/unconscious-programming/Бессознательное программирование.zip"
+    },
+    "description": "Исследование того, что приобретают опытные программисты за пределами синтаксиса: неявного знания, интуиции, сотрудничества с ИИ и умения почувствовать неверный вопрос.",
+    "description_source": {
+      "epub": "books/technology/other/unconscious-programming/Бессознательное программирование.epub",
+      "chapters": [
+        "EPUB/text/book.xhtml"
+      ]
+    }
   }
 ]

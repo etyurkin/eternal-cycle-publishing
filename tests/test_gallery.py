@@ -16,7 +16,9 @@ class Links(HTMLParser):
 class GalleryTests(unittest.TestCase):
  def test_current_approved_scope(self):
   data=json.loads((ROOT/'gallery/books.json').read_text())
-  self.assertEqual(len(data),24);self.assertEqual(len({b['id'] for b in data}),13)
+  catalog=json.loads((ROOT/'catalog.json').read_text())
+  expected={(book['id'],language) for book in catalog['books'] for edition in book['editions'] if edition['status']=='published' and edition['approved_for_publication'] for language in edition['approved_languages']}
+  self.assertEqual({(b['id'],b['language']) for b in data},expected)
   for bid in ('philosophy-of-intent-machines','the-last-don-quixote'):
    cards=[b for b in data if b['id']==bid]
    self.assertEqual({b['language'] for b in cards},{'en','ru'})

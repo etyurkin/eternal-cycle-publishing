@@ -264,6 +264,28 @@
         90,
         160
       ]
+    },
+    {
+      "relative_path": "books/technology/other/unconscious-programming/Unconscious Programming.pdf",
+      "language": "en",
+      "pages": 453,
+      "pdf_sha256": "2b2c1a4655befa98e382e744c71855768fe6482433405a89c60daa2f81c25dd1",
+      "bytes": 771995,
+      "page_size_mm": [
+        90,
+        160
+      ]
+    },
+    {
+      "relative_path": "books/technology/other/unconscious-programming/Бессознательное программирование.pdf",
+      "language": "ru",
+      "pages": 471,
+      "pdf_sha256": "5559daad435ef7459fbe9904d8f02de44b534b5125eb31482aa73ad269b2fa4c",
+      "bytes": 867328,
+      "page_size_mm": [
+        90,
+        160
+      ]
     }
   ]
 }
