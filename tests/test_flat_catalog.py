@@ -19,7 +19,9 @@ class FlatCatalogueTests(unittest.TestCase):
         catalog, rows = load_catalog(self.root)
         for text in readme_texts(catalog, rows).values():
             self.assertIn(GALLERY, text)
-            self.assertIn(GALLERY + 'en/', text)
+            self.assertIn(GALLERY + 'ru/', text)
+            self.assertIn('[Open the book gallery →](' + GALLERY + ')', text)
+            self.assertLess(text.index('Open the book gallery'), text.index('Открыть книжную галерею'))
             self.assertNotIn('Previous editions remain available', text)
 
     def setUp(self):

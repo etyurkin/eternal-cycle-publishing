@@ -14,7 +14,7 @@ from catalog_common import ROOT, FORMATS, digest, load_catalog, validate_readers
 
 REPO = os.environ.get("PUBLIC_REPOSITORY", "etyurkin/eternal-cycle-publishing")
 GALLERY = "https://etyurkin.github.io/eternal-cycle-publishing/"
-FRONT_DOOR = f"**[Открыть книжную галерею →]({GALLERY}) · [Open the book gallery →]({GALLERY}en/)**\n\nОригинальные обложки, короткие описания и книги для чтения с телефона.\nOriginal covers, short descriptions, and books laid out for reading on your phone."
+FRONT_DOOR = f"**[Open the book gallery →]({GALLERY}) · [Открыть книжную галерею →]({GALLERY}ru/)**\n\nOriginal covers, short descriptions, and books laid out for reading on your phone.\nОригинальные обложки, короткие описания и книги для чтения с телефона."
 INTRO_EN = """# Eternal Cycle Publishing ✨
 
 **Machines are limited. Curiosity is not.**

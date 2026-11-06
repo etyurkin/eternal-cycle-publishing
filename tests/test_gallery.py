@@ -3,7 +3,7 @@ from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import unquote
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'scripts'))
-from build_gallery import build,safe,verify_provenance
+from build_gallery import build,safe,verify_provenance,render
 SOURCE=Path(os.environ.get('GALLERY_SOURCE',str(ROOT if (ROOT/'catalog.json').exists() else ROOT.parent/'catalog_mobile/source_repo')))
 class Links(HTMLParser):
  def __init__(self):super().__init__();self.urls=[];self.cards=0;self.images=0
@@ -27,14 +27,35 @@ class GalleryTests(unittest.TestCase):
   with tempfile.TemporaryDirectory() as d:
    out=Path(d)/'site';expected=build(SOURCE,out,'/eternal-cycle-publishing/')
    data=json.loads((ROOT/'gallery/books.json').read_text())
-   self.assertEqual(expected,{str(p.relative_to(out)) for p in out.rglob('*') if p.is_file()});self.assertEqual(len(expected),len(data)*4+4)
-   for language,rel in (('ru','index.html'),('en','en/index.html')):
+   self.assertEqual(expected,{str(p.relative_to(out)) for p in out.rglob('*') if p.is_file()});self.assertEqual(len(expected),len(data)*4+5)
+   for language,rel in (('en','index.html'),('en','en/index.html'),('ru','ru/index.html')):
     count=sum(b['language']==language for b in data)
-    p=Links();p.feed((out/rel).read_text());self.assertEqual(p.cards,count);self.assertEqual(p.images,count)
+    text=(out/rel).read_text();self.assertIn(f'<html lang="{language}">',text)
+    p=Links();p.feed(text);self.assertEqual(p.cards,count);self.assertEqual(p.images,count)
     for url in p.urls:
      if url.startswith('/eternal-cycle-publishing/'):
-      self.assertTrue((out/unquote(url.removeprefix('/eternal-cycle-publishing/'))).exists(),url)
+      target=out/unquote(url.removeprefix('/eternal-cycle-publishing/'))
+      if target.is_dir():target/='index.html'
+      self.assertTrue(target.is_file(),url)
+   self.assertEqual((out/'index.html').read_bytes(),(out/'en/index.html').read_bytes())
    for name in ('README.md','catalog.json','books.json','research','.git','.github'):self.assertFalse((out/name).exists())
+ def test_english_default_language_navigation(self):
+  base='/eternal-cycle-publishing/'
+  books=json.loads((ROOT/'gallery/books.json').read_text())
+  for language in ('en','ru'):
+   text=render(language,books,SOURCE,base)
+   nav=text.split('<nav ',1)[1].split('</nav>',1)[0]
+   self.assertLess(nav.index('lang="en"'),nav.index('lang="ru"'))
+   self.assertIn(f'href="{base}" lang="en"',nav)
+   self.assertIn(f'href="{base}ru/" lang="ru"',nav)
+   current='lang="'+language+'" aria-current="page"'
+   self.assertIn(current,nav)
+   self.assertEqual(nav.count('aria-current="page"'),1)
+   self.assertIn(f'hreflang="en" href="{base}"',text)
+   self.assertIn(f'hreflang="ru" href="{base}ru/"',text)
+   self.assertIn(f'hreflang="x-default" href="{base}"',text)
+   canonical=base+('ru/' if language=='ru' else '')
+   self.assertIn(f'rel="canonical" href="{canonical}"',text)
  def test_unapproved_output_refused(self):
   with tempfile.TemporaryDirectory() as d:
    out=Path(d);(out/'secret.txt').write_text('no')

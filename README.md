@@ -1,9 +1,9 @@
 # Eternal Cycle Publishing · Вечный цикл
 
-**[Открыть книжную галерею →](https://etyurkin.github.io/eternal-cycle-publishing/) · [Open the book gallery →](https://etyurkin.github.io/eternal-cycle-publishing/en/)**
+**[Open the book gallery →](https://etyurkin.github.io/eternal-cycle-publishing/) · [Открыть книжную галерею →](https://etyurkin.github.io/eternal-cycle-publishing/ru/)**
 
-Оригинальные обложки, короткие описания и книги для чтения с телефона.
 Original covers, short descriptions, and books laid out for reading on your phone.
+Оригинальные обложки, короткие описания и книги для чтения с телефона.
 
 # Eternal Cycle Publishing ✨
 
