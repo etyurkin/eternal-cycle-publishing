@@ -113,7 +113,7 @@ def check(epub, title, lang, cover_source):
                 if tag in ("img", "image") and "src" in el.attrib:
                     link = normpath(posixpath.dirname(path), el.attrib["src"])
                     if link and link not in nset: missing_in_xhtml.append(f"{path}: src={el.attrib['src']} => {link}")
-                elif tag in ("a", "link") and "href" in el.attrib:
+                elif tag in ("a", "link") and "href" in el.attrib and urlsplit(el.attrib["href"]).path:
                     link = normpath(posixpath.dirname(path), el.attrib["href"])
                     if link and link not in nset: missing_in_xhtml.append(f"{path}: href={el.attrib['href']} => {link}")
         if missing_in_xhtml:
