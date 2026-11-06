@@ -29,7 +29,7 @@ class PagesArtifactTests(unittest.TestCase):
             (folder / old).write_bytes(b'%PDF-old')
             (folder / new).write_bytes(b'PK-new')
         (source / 'gallery').mkdir()
-        (source / 'gallery/books.json').write_text(json.dumps([{'files': {'pdf': old, 'epub': new}}]))
+        (source / 'gallery/books.json').write_text(json.dumps([{'files': {'pdf': old, 'epub': new}, 'cover': 'assets/covers/unused.png'}]))
         (site / '.nojekyll').touch()
         for rel in PAGES:
             path = site / rel
@@ -51,11 +51,15 @@ class PagesArtifactTests(unittest.TestCase):
             result = prepare(ROOT, site)
             after = hashes(site)
             remote = {r['path'] for r in config['remote']}
+            covers = {r['path'] for r in config['remote_covers']}
+            self.assertEqual(result['preserved_cover_urls'], 26)
+            self.assertEqual(result['pinned_remote_covers'], 6)
+            self.assertEqual(result['removed_cover_bytes'], 10866467)
             self.assertEqual(result['preserved_reader_urls'], 78)
             self.assertEqual(result['pinned_remote_readers'], 12)
             self.assertEqual(result['removed_binary_bytes'], 28253887)
-            self.assertEqual(set(before) - set(after), remote)
-            self.assertEqual(len(after), 115)
+            self.assertEqual(set(before) - set(after), remote | covers)
+            self.assertEqual(len(after), 109)
             for rel in set(after) - set(PAGES):
                 self.assertEqual(after[rel], before[rel])
             for rel in config['preserve_pages']:
@@ -73,12 +77,12 @@ class PagesArtifactTests(unittest.TestCase):
                 for url in parser.urls:
                     if url.startswith(raw):
                         path = unquote(url.removeprefix(raw))
-                        self.assertIn(path, remote)
+                        self.assertIn(path, remote | {'gallery/' + c for c in covers})
                         seen.add(path)
                     elif url.startswith(BASE):
                         path = site / unquote(url.removeprefix(BASE))
                         self.assertTrue(path.exists(), url)
-            self.assertEqual(seen, remote)
+            self.assertEqual(seen, remote | {'gallery/' + c for c in covers})
             self.assertEqual((site / 'index.html').read_bytes(), (site / 'en/index.html').read_bytes())
 
     def test_invalid_manifest_or_changed_bytes_never_changes_artifact(self):
@@ -98,6 +102,36 @@ class PagesArtifactTests(unittest.TestCase):
                 before = hashes(site)
                 with self.assertRaises(ValueError): prepare(source, site, config)
                 self.assertEqual(hashes(site), before)
+
+    def test_cover_validation_fails_before_any_output_changes(self):
+        for case in ('hash', 'source', 'legacy', 'overlap', 'unknown', 'missing_link'):
+            with self.subTest(case=case), tempfile.TemporaryDirectory() as d:
+                source, site, config, old, new = self.fixture(Path(d))
+                old_cover, new_cover = 'assets/covers/Old.png', 'assets/covers/New.png'
+                for root in (source / 'gallery', site):
+                    (root / 'assets/covers').mkdir(parents=True)
+                    (root / old_cover).write_bytes(b'old cover')
+                    (root / new_cover).write_bytes(b'new cover')
+                cards = [{'files': {'pdf': old, 'epub': new}, 'cover': c} for c in (old_cover, new_cover)]
+                (source / 'gallery/books.json').write_text(json.dumps(cards))
+                config['preserve_covers'] = [old_cover]
+                config['remote_covers'] = [{'path': new_cover, 'sha256': hashlib.sha256(b'new cover').hexdigest()}]
+                for rel in PAGES:
+                    path = site / rel
+                    path.write_text(path.read_text() + '<img src="' + BASE + new_cover + '">')
+                if case == 'hash': config['remote_covers'][0]['sha256'] = '0' * 64
+                if case == 'source': (source / 'gallery' / new_cover).write_bytes(b'changed')
+                if case == 'legacy': (site / old_cover).write_bytes(b'changed')
+                if case == 'overlap': config['preserve_covers'].append(new_cover)
+                if case == 'unknown': config['remote_covers'][0]['path'] = 'assets/covers/unknown.png'
+                if case == 'missing_link':
+                    for rel in PAGES:
+                        path = site / rel
+                        path.write_text(path.read_text().replace('<img src="' + BASE + new_cover + '">', ''))
+                before, source_before = hashes(site), hashes(source)
+                with self.assertRaises(ValueError): prepare(source, site, config)
+                self.assertEqual(hashes(site), before)
+                self.assertEqual(hashes(source), source_before)
 
     def test_repeat_fails_cleanly_without_touching_source_or_output(self):
         with tempfile.TemporaryDirectory() as d:

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Trim only explicitly pinned new downloads from a freshly built Pages artifact.
+"""Trim explicitly pinned new readers and covers from a freshly built Pages artifact.
 
 Existing Pages reader URLs remain real binary files. Source books are never
 modified. Raw GitHub uses a generic MIME type, so new PDFs may download instead
@@ -59,11 +59,25 @@ def prepare(source, site, manifest=None, base='/eternal-cycle-publishing/'):
         raise ValueError('Invalid immutable GitHub target')
     legacy = config['preserve_pages']
     remote = {item['path']: item['sha256'] for item in config['remote']}
+    legacy_covers = config.get('preserve_covers', [])
+    cover_entries = config.get('remote_covers', [])
+    remote_covers = {item['path']: item['sha256'] for item in cover_entries}
+    if (len(legacy_covers) != len(set(legacy_covers)) or len(remote_covers) != len(cover_entries)
+            or set(legacy_covers) & remote_covers.keys()):
+        raise ValueError('Duplicate or overlapping cover scope')
     if (not legacy or not remote or len(legacy) != len(set(legacy))
             or len(remote) != len(config['remote']) or set(legacy) & remote.keys()):
         raise ValueError('Duplicate, empty, or overlapping reader scope')
     cards = json.loads((source / 'gallery/books.json').read_text())
     approved = {path for card in cards for path in card['files'].values()}
+    approved_covers = {card['cover'] for card in cards}
+    for rel in [*legacy_covers, *remote_covers]:
+        if (rel not in approved_covers or not rel.startswith('assets/covers/')
+                or Path(rel).suffix not in ('.png', '.jpg')):
+            raise ValueError('Cover is not in the approved gallery')
+    for rel in legacy_covers:
+        if digest(checked_file(site, rel)) != digest(checked_file(source / 'gallery', rel)):
+            raise ValueError('Protected cover differs from source: ' + rel)
     if not set(remote).issubset(approved):
         raise ValueError('Remote reader is not in the approved gallery')
     for rel in legacy:
@@ -79,6 +93,13 @@ def prepare(source, site, manifest=None, base='/eternal-cycle-publishing/'):
         if digest(checked_file(source, rel)) != expected or digest(checked_file(site, rel)) != expected:
             raise ValueError('Pinned reader hash mismatch: ' + rel)
         replacements[base + quote(rel)] = raw + quote(rel)
+    for rel, expected in remote_covers.items():
+        if not re.fullmatch('[0-9a-f]{64}', expected):
+            raise ValueError('Invalid pinned cover')
+        if digest(checked_file(source / 'gallery', rel)) != expected or digest(checked_file(site, rel)) != expected:
+            raise ValueError('Pinned cover hash mismatch: ' + rel)
+        replacements[base + quote(rel)] = raw + quote('gallery/' + rel)
+    omitted = set(remote) | set(remote_covers)
     pages = {}
     seen = set()
     for rel in PAGES:
@@ -88,8 +109,9 @@ def prepare(source, site, manifest=None, base='/eternal-cycle-publishing/'):
         for url in parser.urls:
             if url in replacements:
                 seen.add(url)
-                content = content.replace('href="' + html.escape(url, quote=True) + '"',
-                                          'href="' + html.escape(replacements[url], quote=True) + '"')
+                for attribute in ('href', 'src'):
+                    content = content.replace(attribute + '="' + html.escape(url, quote=True) + '"',
+                                              attribute + '="' + html.escape(replacements[url], quote=True) + '"')
         parser = Links()
         parser.feed(content)
         for url in parser.urls:
@@ -103,7 +125,7 @@ def prepare(source, site, manifest=None, base='/eternal-cycle-publishing/'):
                 if target.is_dir():
                     local = str(Path(local) / 'index.html')
                 checked_file(site, local)
-                if local in remote:
+                if local in omitted:
                     raise ValueError('Local link still needs an omitted reader')
         pages[rel] = content
     if seen != set(replacements):
@@ -113,12 +135,24 @@ def prepare(source, site, manifest=None, base='/eternal-cycle-publishing/'):
     for rel, content in pages.items():
         (site / rel).write_text(content, encoding='utf-8')
     removed_bytes = sum((site / rel).stat().st_size for rel in remote)
-    for rel in remote:
+    removed_cover_bytes = sum((site / rel).stat().st_size for rel in remote_covers)
+    for rel in omitted:
         (site / rel).unlink()
+    # Remove only empty directories left by these omitted artifact copies.
+    parents = {parent for rel in omitted for parent in (site / rel).parents
+               if parent != site and parent.is_relative_to(site)}
+    for parent in sorted(parents, key=lambda p: len(p.parts), reverse=True):
+        if parent.is_dir() and not any(parent.iterdir()):
+            parent.rmdir()
     for rel in legacy:
         if digest(site / rel) != digest(source / rel):
             raise ValueError('Protected reader changed during preparation')
+    for rel in legacy_covers:
+        if digest(site / rel) != digest(source / 'gallery' / rel):
+            raise ValueError('Protected cover changed during preparation')
     result = {'preserved_reader_urls': len(legacy), 'pinned_remote_readers': len(remote),
+              'preserved_cover_urls': len(legacy_covers), 'pinned_remote_covers': len(remote_covers),
+              'removed_cover_bytes': removed_cover_bytes,
               'removed_binary_bytes': removed_bytes, 'revision': config['revision']}
     print(json.dumps(result, sort_keys=True))
     return result

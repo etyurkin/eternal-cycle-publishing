@@ -131,5 +131,59 @@
       "path": "books/technology/other/code-bites/Code Bites.pdf",
       "sha256": "be7dc7e2b3f54d0b5ea20d47b96d258fb88f7260c19e792b87397307485b250b"
     }
+  ],
+  "preserve_covers": [
+    "assets/covers/code-bites-ru.jpg",
+    "assets/covers/dot-above-the-sand-en.jpg",
+    "assets/covers/dot-above-the-sand-ru.jpg",
+    "assets/covers/fishing-the-stream-en.jpg",
+    "assets/covers/fishing-the-stream-ru.jpg",
+    "assets/covers/in-the-beginning-there-was-a-question-en.jpg",
+    "assets/covers/in-the-beginning-there-was-a-question-ru.jpg",
+    "assets/covers/in-the-margins-of-the-stars-en.jpg",
+    "assets/covers/in-the-margins-of-the-stars-ru.jpg",
+    "assets/covers/introduction-to-the-programmers-profession-en.jpg",
+    "assets/covers/philosophy-of-intent-machines-en.png",
+    "assets/covers/philosophy-of-intent-machines-ru.png",
+    "assets/covers/problems-with-chronology-en.jpg",
+    "assets/covers/problems-with-chronology-ru.jpg",
+    "assets/covers/seven-kings-vol-1-en.jpg",
+    "assets/covers/seven-kings-vol-1-ru.jpg",
+    "assets/covers/seven-kings-vol-2-en.jpg",
+    "assets/covers/seven-kings-vol-2-ru.jpg",
+    "assets/covers/standby-mode-en.jpg",
+    "assets/covers/standby-mode-ru.jpg",
+    "assets/covers/the-last-don-quixote-en.png",
+    "assets/covers/the-last-don-quixote-ru.png",
+    "assets/covers/unconscious-programming-en.png",
+    "assets/covers/unconscious-programming-ru.png",
+    "assets/covers/while-the-echo-lasts-en.jpg",
+    "assets/covers/while-the-echo-lasts-ru.jpg"
+  ],
+  "remote_covers": [
+    {
+      "path": "assets/covers/blueprint-we-made-it-en.png",
+      "sha256": "b9fb80d985a4b54c240d3d0a014f52c162151773e5eb022a6da2a022053aca0d"
+    },
+    {
+      "path": "assets/covers/blueprint-we-made-it-ru.png",
+      "sha256": "7d492ea3276bc56db8efb8419438c728cb90ca0eeeef45bc637683914b730866"
+    },
+    {
+      "path": "assets/covers/book-of-side-effects-ru.jpg",
+      "sha256": "d811422e4caec4ed7201d91c95d0336fb69bb371975381571e7c5742812ef44f"
+    },
+    {
+      "path": "assets/covers/code-bites-en.png",
+      "sha256": "ff096705138719ce6381f618a45a61e81c22094422a55ad7eb1283a9b3e77bc7"
+    },
+    {
+      "path": "assets/covers/introduction-to-the-programmers-profession-ru.jpg",
+      "sha256": "168e72859f3a9050ac1f8a0b0db226f787a605aa3226a36e9cf77a44a0f04a9e"
+    },
+    {
+      "path": "assets/covers/six-spray-cans-ru.png",
+      "sha256": "105f03b91dbc34caf9b811de8146ef9ad9c39146ce226d3ca65ad7cda53d9512"
+    }
   ]
 }
