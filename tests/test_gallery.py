@@ -39,6 +39,14 @@ class GalleryTests(unittest.TestCase):
       self.assertTrue(target.is_file(),url)
    self.assertEqual((out/'index.html').read_bytes(),(out/'en/index.html').read_bytes())
    for name in ('README.md','catalog.json','books.json','research','.git','.github'):self.assertFalse((out/name).exists())
+ def test_full_publisher_name_in_both_headers(self):
+  books=json.loads((ROOT/'gallery/books.json').read_text())
+  for language,label in (('en','Book gallery'),('ru','Книжная галерея')):
+   text=render(language,books,SOURCE,'/eternal-cycle-publishing/')
+   brand=text.split('<a class="brand"',1)[1].split('</a>',1)[0]
+   self.assertIn('<span>Eternal Cycle Publishing</span>',brand)
+   self.assertIn(f'<small>{label}</small>',brand)
+   self.assertNotIn('Publishing ·',brand)
  def test_english_default_language_navigation(self):
   base='/eternal-cycle-publishing/'
   books=json.loads((ROOT/'gallery/books.json').read_text())
