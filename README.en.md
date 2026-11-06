@@ -7,7 +7,7 @@ Original covers, short descriptions, and books laid out for reading on your phon
 
 [Home](README.md) · [English](README.en.md) · [Русский](README.ru.md)
 
-12 works in 13 volumes are available below, including both volumes of Seven Kings. Every listed language edition has PDF, EPUB and a ZIP containing both.
+13 works in 14 volumes are available below, including both volumes of Seven Kings. Every listed language edition has PDF, EPUB and a ZIP containing both.
 
 These are the approved mobile reading editions. PDF pages use a 90 × 160 mm phone-friendly layout; EPUBs work with reading apps, and each ZIP contains its matching PDF and EPUB. See the [edition policy](EDITION_POLICY.md).
 
@@ -98,6 +98,13 @@ Reflective nonfiction
 Technology and fiction
 
 - **Русский (ru) · edition 2**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/code-bites/%D0%9A%D0%BE%D0%B4%20%D0%BA%D1%83%D1%81%D0%B0%D0%B5%D1%82%D1%81%D1%8F.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/code-bites/%D0%9A%D0%BE%D0%B4%20%D0%BA%D1%83%D1%81%D0%B0%D0%B5%D1%82%D1%81%D1%8F.epub) · [ZIP](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/code-bites/%D0%9A%D0%BE%D0%B4%20%D0%BA%D1%83%D1%81%D0%B0%D0%B5%D1%82%D1%81%D1%8F.zip)
+
+### Unconscious Programming / Бессознательное программирование
+
+Café de la Luna · Research Series · Book I
+
+- **English (en) · edition 1**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/unconscious-programming/Unconscious%20Programming.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/unconscious-programming/Unconscious%20Programming.epub) · [ZIP](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/unconscious-programming/Unconscious%20Programming.zip)
+- **Русский (ru) · edition 1**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/unconscious-programming/%D0%91%D0%B5%D1%81%D1%81%D0%BE%D0%B7%D0%BD%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/unconscious-programming/%D0%91%D0%B5%D1%81%D1%81%D0%BE%D0%B7%D0%BD%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.epub) · [ZIP](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/unconscious-programming/%D0%91%D0%B5%D1%81%D1%81%D0%BE%D0%B7%D0%BD%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.zip)
 
 ## Essays & ideas
 

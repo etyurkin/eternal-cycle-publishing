@@ -502,6 +502,33 @@
           ]
         }
       ]
+    },
+    {
+      "id": "unconscious-programming",
+      "category": "technology",
+      "series": "other",
+      "title_en": "Unconscious Programming",
+      "title_ru": "Бессознательное программирование",
+      "note_en": "Café de la Luna · Research Series · Book I",
+      "note_ru": "Café de la Luna · Исследовательская серия · Книга I",
+      "file_stems": {
+        "en": "Unconscious Programming",
+        "ru": "Бессознательное программирование"
+      },
+      "editions": [
+        {
+          "version": 1,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Bilingual research edition",
+          "note_ru": "Двуязычное исследовательское издание",
+          "approved_languages": [
+            "en",
+            "ru"
+          ]
+        }
+      ]
     }
   ]
 }

@@ -7,7 +7,7 @@ Original covers, short descriptions, and books laid out for reading on your phon
 
 [Home](README.md) · [English](README.en.md) · [Русский](README.ru.md)
 
-Ниже доступны 12 произведений в 13 томах, включая оба тома «Семи королей». Для каждого указанного языка доступны PDF, EPUB и ZIP с обоими форматами.
+Ниже доступны 13 произведений в 14 томах, включая оба тома «Семи королей». Для каждого указанного языка доступны PDF, EPUB и ZIP с обоими форматами.
 
 Здесь доступны утверждённые мобильные издания. Страницы PDF имеют удобный для телефона размер 90 × 160 мм; EPUB открывается в приложении-читалке, а ZIP содержит соответствующую пару PDF и EPUB. См. [правила публикации](EDITION_POLICY.md).
 
@@ -98,6 +98,13 @@ Café de la Luna · Детская серия · Книга IV · Том 2
 Технологии и проза
 
 - **Русский (ru) · издание 2**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/code-bites/%D0%9A%D0%BE%D0%B4%20%D0%BA%D1%83%D1%81%D0%B0%D0%B5%D1%82%D1%81%D1%8F.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/code-bites/%D0%9A%D0%BE%D0%B4%20%D0%BA%D1%83%D1%81%D0%B0%D0%B5%D1%82%D1%81%D1%8F.epub) · [ZIP](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/code-bites/%D0%9A%D0%BE%D0%B4%20%D0%BA%D1%83%D1%81%D0%B0%D0%B5%D1%82%D1%81%D1%8F.zip)
+
+### Unconscious Programming / Бессознательное программирование
+
+Café de la Luna · Исследовательская серия · Книга I
+
+- **English (en) · издание 1**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/unconscious-programming/Unconscious%20Programming.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/unconscious-programming/Unconscious%20Programming.epub) · [ZIP](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/unconscious-programming/Unconscious%20Programming.zip)
+- **Русский (ru) · издание 1**: [PDF](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/unconscious-programming/%D0%91%D0%B5%D1%81%D1%81%D0%BE%D0%B7%D0%BD%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.pdf) · [EPUB](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/unconscious-programming/%D0%91%D0%B5%D1%81%D1%81%D0%BE%D0%B7%D0%BD%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.epub) · [ZIP](https://raw.githubusercontent.com/etyurkin/eternal-cycle-publishing/main/books/technology/other/unconscious-programming/%D0%91%D0%B5%D1%81%D1%81%D0%BE%D0%B7%D0%BD%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.zip)
 
 ## Эссе и идеи
 
