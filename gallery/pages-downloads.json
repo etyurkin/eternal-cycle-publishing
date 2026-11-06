@@ -1,0 +1,135 @@
+{
+  "version": 1,
+  "repository": "etyurkin/eternal-cycle-publishing",
+  "revision": "5abd54171d01c31b4f4f489a0ef318c7553de484",
+  "preserve_pages": [
+    "books/children/dot-above-the-sand/A Dot Above the Sand.epub",
+    "books/children/dot-above-the-sand/A Dot Above the Sand.pdf",
+    "books/children/dot-above-the-sand/A Dot Above the Sand.zip",
+    "books/children/dot-above-the-sand/Точка над песком.epub",
+    "books/children/dot-above-the-sand/Точка над песком.pdf",
+    "books/children/dot-above-the-sand/Точка над песком.zip",
+    "books/children/in-the-beginning-there-was-a-question/In the Beginning There Was a Question.epub",
+    "books/children/in-the-beginning-there-was-a-question/In the Beginning There Was a Question.pdf",
+    "books/children/in-the-beginning-there-was-a-question/In the Beginning There Was a Question.zip",
+    "books/children/in-the-beginning-there-was-a-question/Вначале был Вопрос.epub",
+    "books/children/in-the-beginning-there-was-a-question/Вначале был Вопрос.pdf",
+    "books/children/in-the-beginning-there-was-a-question/Вначале был Вопрос.zip",
+    "books/children/in-the-margins-of-the-stars/In the Margins of the Stars.epub",
+    "books/children/in-the-margins-of-the-stars/In the Margins of the Stars.pdf",
+    "books/children/in-the-margins-of-the-stars/In the Margins of the Stars.zip",
+    "books/children/in-the-margins-of-the-stars/На полях звёзд.epub",
+    "books/children/in-the-margins-of-the-stars/На полях звёзд.pdf",
+    "books/children/in-the-margins-of-the-stars/На полях звёзд.zip",
+    "books/children/seven-kings-vol-1/Seven Kings · Beyond the Screen.epub",
+    "books/children/seven-kings-vol-1/Seven Kings · Beyond the Screen.pdf",
+    "books/children/seven-kings-vol-1/Seven Kings · Beyond the Screen.zip",
+    "books/children/seven-kings-vol-1/Семь королей · По ту сторону ширмы.epub",
+    "books/children/seven-kings-vol-1/Семь королей · По ту сторону ширмы.pdf",
+    "books/children/seven-kings-vol-1/Семь королей · По ту сторону ширмы.zip",
+    "books/children/seven-kings-vol-2/Seven Kings · All the Strings.epub",
+    "books/children/seven-kings-vol-2/Seven Kings · All the Strings.pdf",
+    "books/children/seven-kings-vol-2/Seven Kings · All the Strings.zip",
+    "books/children/seven-kings-vol-2/Семь королей · Все нити.epub",
+    "books/children/seven-kings-vol-2/Семь королей · Все нити.pdf",
+    "books/children/seven-kings-vol-2/Семь королей · Все нити.zip",
+    "books/fiction/absurdity-factory/problems-with-chronology/Problems with Chronology.epub",
+    "books/fiction/absurdity-factory/problems-with-chronology/Problems with Chronology.pdf",
+    "books/fiction/absurdity-factory/problems-with-chronology/Problems with Chronology.zip",
+    "books/fiction/absurdity-factory/problems-with-chronology/Проблемы с хронологией.epub",
+    "books/fiction/absurdity-factory/problems-with-chronology/Проблемы с хронологией.pdf",
+    "books/fiction/absurdity-factory/problems-with-chronology/Проблемы с хронологией.zip",
+    "books/fiction/absurdity-factory/standby-mode/Standby Mode.epub",
+    "books/fiction/absurdity-factory/standby-mode/Standby Mode.pdf",
+    "books/fiction/absurdity-factory/standby-mode/Standby Mode.zip",
+    "books/fiction/absurdity-factory/standby-mode/Режим ожидания.epub",
+    "books/fiction/absurdity-factory/standby-mode/Режим ожидания.pdf",
+    "books/fiction/absurdity-factory/standby-mode/Режим ожидания.zip",
+    "books/fiction/standalone/the-last-don-quixote/The Last Don Quixote.epub",
+    "books/fiction/standalone/the-last-don-quixote/The Last Don Quixote.pdf",
+    "books/fiction/standalone/the-last-don-quixote/The Last Don Quixote.zip",
+    "books/fiction/standalone/the-last-don-quixote/Последний Дон-Кихот.epub",
+    "books/fiction/standalone/the-last-don-quixote/Последний Дон-Кихот.pdf",
+    "books/fiction/standalone/the-last-don-quixote/Последний Дон-Кихот.zip",
+    "books/fiction/standalone/while-the-echo-lasts/While the Echo Lasts.epub",
+    "books/fiction/standalone/while-the-echo-lasts/While the Echo Lasts.pdf",
+    "books/fiction/standalone/while-the-echo-lasts/While the Echo Lasts.zip",
+    "books/fiction/standalone/while-the-echo-lasts/Пока звучит эхо.epub",
+    "books/fiction/standalone/while-the-echo-lasts/Пока звучит эхо.pdf",
+    "books/fiction/standalone/while-the-echo-lasts/Пока звучит эхо.zip",
+    "books/ideas/intent-machines/philosophy-of-intent-machines/The Philosophy of Intent Machines.epub",
+    "books/ideas/intent-machines/philosophy-of-intent-machines/The Philosophy of Intent Machines.pdf",
+    "books/ideas/intent-machines/philosophy-of-intent-machines/The Philosophy of Intent Machines.zip",
+    "books/ideas/intent-machines/philosophy-of-intent-machines/Философия Машин Намерения.epub",
+    "books/ideas/intent-machines/philosophy-of-intent-machines/Философия Машин Намерения.pdf",
+    "books/ideas/intent-machines/philosophy-of-intent-machines/Философия Машин Намерения.zip",
+    "books/technology/education/introduction-to-the-programmers-profession/Introduction to the Programmer’s Profession.epub",
+    "books/technology/education/introduction-to-the-programmers-profession/Introduction to the Programmer’s Profession.pdf",
+    "books/technology/education/introduction-to-the-programmers-profession/Introduction to the Programmer’s Profession.zip",
+    "books/technology/other/code-bites/Код кусается.epub",
+    "books/technology/other/code-bites/Код кусается.pdf",
+    "books/technology/other/code-bites/Код кусается.zip",
+    "books/technology/other/fishing-the-stream/Fishing the Stream.epub",
+    "books/technology/other/fishing-the-stream/Fishing the Stream.pdf",
+    "books/technology/other/fishing-the-stream/Fishing the Stream.zip",
+    "books/technology/other/fishing-the-stream/Речная рыбалка.epub",
+    "books/technology/other/fishing-the-stream/Речная рыбалка.pdf",
+    "books/technology/other/fishing-the-stream/Речная рыбалка.zip",
+    "books/technology/other/unconscious-programming/Unconscious Programming.epub",
+    "books/technology/other/unconscious-programming/Unconscious Programming.pdf",
+    "books/technology/other/unconscious-programming/Unconscious Programming.zip",
+    "books/technology/other/unconscious-programming/Бессознательное программирование.epub",
+    "books/technology/other/unconscious-programming/Бессознательное программирование.pdf",
+    "books/technology/other/unconscious-programming/Бессознательное программирование.zip"
+  ],
+  "remote": [
+    {
+      "path": "books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint. We Made It!.epub",
+      "sha256": "fa8ff3fb7bcdb5bf588f9a48d17de43425db9ed44295bb61905ecf90e9d605ef"
+    },
+    {
+      "path": "books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint. We Made It!.pdf",
+      "sha256": "cf685f7788aa1591ba1eed3162e9c26b272deb507202ea7302b441ce5ded0fc1"
+    },
+    {
+      "path": "books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint. Мы добрались!.epub",
+      "sha256": "1f6d56d7fc6aac953466d4784d761fc743ef49f751d987af0c4d4b48a06e8be6"
+    },
+    {
+      "path": "books/fiction/absurdity-factory/blueprint-we-made-it/Blueprint. Мы добрались!.pdf",
+      "sha256": "4f29535add593f3ba5481efc069d4f91fc95c258f9a01b423a5856229dd89816"
+    },
+    {
+      "path": "books/fiction/absurdity-factory/book-of-side-effects/Книга побочных эффектов.epub",
+      "sha256": "277e20d56142e8ce679fc5cc86765f2118a09be22d644a9fd1cb941d8570ae02"
+    },
+    {
+      "path": "books/fiction/absurdity-factory/book-of-side-effects/Книга побочных эффектов.pdf",
+      "sha256": "9553d3c66cc2f923f88a6a79dbc98011bc73caa6e2ffec48367615b3c0abf34b"
+    },
+    {
+      "path": "books/fiction/absurdity-factory/six-spray-cans/Шесть баллонов, которых не существовало.epub",
+      "sha256": "f355a5ad14e5d1f50b7cdd007f747e031fe0a6c0a4b6bf109ca396907c0220b5"
+    },
+    {
+      "path": "books/fiction/absurdity-factory/six-spray-cans/Шесть баллонов, которых не существовало.pdf",
+      "sha256": "464e59bcae061031361f7b82e4ab6bb5b3624f19b1e31391fcbc48a56bf6f90d"
+    },
+    {
+      "path": "books/technology/education/introduction-to-the-programmers-profession/Введение в профессию программиста.epub",
+      "sha256": "e21c0ae75e8512ee9e5ff155a6988b039b23b2d15e471cdbed03b8490bc24d22"
+    },
+    {
+      "path": "books/technology/education/introduction-to-the-programmers-profession/Введение в профессию программиста.pdf",
+      "sha256": "32c8cbb2e83f3f4663d004ef2a0eedc709d98a08ae5921f16c08a3daeef128c1"
+    },
+    {
+      "path": "books/technology/other/code-bites/Code Bites.epub",
+      "sha256": "c8b2939eae1925d8851a621ee6541c160f97854db673d4b9da691d1fa56a6270"
+    },
+    {
+      "path": "books/technology/other/code-bites/Code Bites.pdf",
+      "sha256": "be7dc7e2b3f54d0b5ea20d47b96d258fb88f7260c19e792b87397307485b250b"
+    }
+  ]
+}

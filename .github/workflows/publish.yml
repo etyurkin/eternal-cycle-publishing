@@ -35,6 +35,7 @@ jobs:
           python scripts/audit_epub_contents.py
           python scripts/verify_mobile_readers.py
           python scripts/build_gallery.py --output _site
+          python scripts/prepare_pages_artifact.py --site _site
       - name: Show generated changes proposed by PR
         run: git status --short
 
@@ -72,6 +73,8 @@ jobs:
         run: python scripts/verify_mobile_readers.py
       - name: Generate the bilingual gallery
         run: python scripts/build_gallery.py --output _site
+      - name: Preserve existing Pages downloads and pin new readers to GitHub
+        run: python scripts/prepare_pages_artifact.py --site _site
       - name: Commit generated catalogue and gallery files if changed
         id: commit
         run: |
