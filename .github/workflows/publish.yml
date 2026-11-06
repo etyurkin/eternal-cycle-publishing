@@ -25,6 +25,8 @@ jobs:
         run: python scripts/build_catalog.py --check
       - name: Check reader files and download links
         run: python scripts/verify_reader_files.py
+      - name: Audit EPUB chapters, metadata, internal links and covers
+        run: python scripts/audit_epub_contents.py
       - name: Require exact approved mobile PDFs
         run: python scripts/verify_mobile_readers.py
       - name: Build allowlisted bilingual gallery
