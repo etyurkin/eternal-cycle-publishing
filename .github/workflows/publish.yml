@@ -1,46 +1,97 @@
-name: Validate readers and deploy gallery
+name: Auto-sync approved books and deploy gallery
 on:
   push:
     branches: [main]
   pull_request:
   workflow_dispatch:
+
 permissions:
   contents: read
+
 concurrency:
   group: eternal-cycle-pages-${{ github.ref }}
   cancel-in-progress: false
+
 jobs:
-  validate:
+  review:
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Install PDF verification dependency
+        run: python -m pip install --requirement requirements-validation.txt
+      - name: Generate proposed approved gallery and verify books
+        run: |
+          python scripts/sync_mobile_readers.py
+          python scripts/sync_gallery.py
+          python scripts/build_catalog.py
+          python -m unittest discover -s tests -v
+          python scripts/verify_reader_files.py
+          python scripts/audit_epub_contents.py
+          python scripts/verify_mobile_readers.py
+          python scripts/build_gallery.py --output _site
+      - name: Show generated changes proposed by PR
+        run: git status --short
+
+  publish:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      built_sha: ${{ steps.commit.outputs.built_sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - name: Install pinned PDF validation dependency
         run: python -m pip install --requirement requirements-validation.txt
+      - name: Register only approved mobile PDF books
+        run: python scripts/sync_mobile_readers.py
+      - name: Build gallery cards for approved EPUB and embedded covers
+        run: python scripts/sync_gallery.py
+      - name: Regenerate deterministic ZIPs and multilingual catalogues
+        run: python scripts/build_catalog.py
       - name: Run publication and gallery regression tests
         run: python -m unittest discover -s tests -v
-      - name: Check deterministic catalog and ZIPs
+      - name: Verify deterministic catalog and ZIPs
         run: python scripts/build_catalog.py --check
-      - name: Check reader files and download links
+      - name: Verify reader files and links
         run: python scripts/verify_reader_files.py
-      - name: Audit EPUB chapters, metadata, internal links and covers
+      - name: Verify EPUB chapters, covers and internal links
         run: python scripts/audit_epub_contents.py
-      - name: Require exact approved mobile PDFs
+      - name: Verify page size and pinned mobile reader hashes
         run: python scripts/verify_mobile_readers.py
-      - name: Build allowlisted bilingual gallery
+      - name: Generate the bilingual gallery
         run: python scripts/build_gallery.py --output _site
-      - name: Confirm validation did not change committed files
-        run: git diff --exit-code
-      - name: Package Pages output only
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+      - name: Commit generated catalogue and gallery files if changed
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalog.json mobile-readers.json gallery/books.json gallery/assets/covers \
+            books README.md README.en.md README.ru.md reader-files.sha256
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: sync approved readers and bilingual gallery"
+            git push origin HEAD:main
+          fi
+          echo "built_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Package validated gallery for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+
   deploy:
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-    needs: validate
+    if: github.event_name != 'pull_request'
+    needs: publish
     runs-on: ubuntu-latest
     permissions:
       pages: write
