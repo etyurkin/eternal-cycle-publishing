@@ -437,6 +437,18 @@
             "en",
             "ru"
           ]
+        },
+        {
+          "version": 3,
+          "status": "published",
+          "approved_for_publication": true,
+          "year": 2026,
+          "note_en": "Technical EPUB link repair: missing evidence attachments marked available on request; manuscript text, cover, PDF unchanged",
+          "note_ru": "Техническая правка ссылок EPUB: отсутствующие приложения указаны как доступные по запросу; текст, обложка и PDF не изменены",
+          "approved_languages": [
+            "en",
+            "ru"
+          ]
         }
       ]
     },
