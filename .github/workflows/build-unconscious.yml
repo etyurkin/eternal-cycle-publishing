@@ -9,15 +9,18 @@ on:
       - 'books/technology/other/unconscious-programming/**'
 permissions:
   contents: write
+concurrency:
+  group: unconscious-reader-build-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
   build:
-    if: github.actor != 'github-actions[bot]'
+    if: github.actor != 'github-actions[bot]' && github.ref == 'refs/heads/publish-unconscious-programming'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: true
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: '3.12'
       - name: Install mobile layout and verification dependencies
@@ -33,6 +36,9 @@ jobs:
           git add books/technology/other/unconscious-programming \
             catalog.json gallery/books.json gallery/assets/covers \
             mobile-readers.json reader-files.sha256 README.md README.en.md README.ru.md
-          git diff --cached --quiet && exit 1
+          if git diff --cached --quiet; then
+            echo "Approved readers are already current; nothing to commit."
+            exit 0
+          fi
           git commit -m "publish: verified Unconscious Programming RU and EN mobile editions"
           git push origin HEAD:$GITHUB_REF_NAME

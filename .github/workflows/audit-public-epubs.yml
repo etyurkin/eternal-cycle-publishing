@@ -1,48 +1,37 @@
-name: Repair and verify public EPUB reading editions
+name: Audit public EPUB reading editions
 on:
   push:
-    branches: [repair-public-epub-readers]
+    branches: [main, repair-public-epub-readers]
     paths:
       - '.github/workflows/audit-public-epubs.yml'
-      - 'scripts/repair_fishing_epub_links.py'
       - 'scripts/audit_epub_contents.py'
+      - 'tests/test_workflow_safety.py'
+      - 'requirements-validation.txt'
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
 concurrency:
-  group: epub-repair-branch
+  group: epub-audit-${{ github.ref }}
   cancel-in-progress: false
 jobs:
-  epub-repair:
-    if: github.actor != 'github-actions[bot]'
+  epub-audit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          persist-credentials: true
-      - uses: actions/setup-python@v5
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: '3.12'
-      - name: Install pinned mobile PDF validator
+      - name: Install pinned validation dependencies
         run: python -m pip install -r requirements-validation.txt
-      - name: Repair missing evidence links without changing book text or PDF
-        run: python scripts/repair_fishing_epub_links.py
-      - name: Rebuild localized EPUB ZIPs, checksums and book indexes
-        run: python scripts/build_catalog.py
+      - name: Verify existing catalogues and deterministic reader ZIPs
+        run: python scripts/build_catalog.py --check
       - name: Validate public EPUB content and all internal references
         run: python scripts/audit_epub_contents.py
       - name: Verify reader files and existing phone-size PDFs
         run: |
           python scripts/verify_reader_files.py
           python scripts/verify_mobile_readers.py
-      - name: Run all gallery and book catalog tests
+      - name: Run all gallery and workflow regression tests
         run: python -m unittest discover -s tests -v
-      - name: Commit repaired readers and derived indexes
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add books/technology/other/fishing-the-stream \
-            catalog.json README.md README.en.md README.ru.md reader-files.sha256
-          git diff --cached --quiet && exit 1
-          git commit -m 'Repair fishing EPUB evidence references as technical v3'
-          git push origin HEAD:$GITHUB_REF_NAME
