@@ -68,8 +68,8 @@ def cover_epub(path,image):
   files={name:z.read(name) for name in z.namelist()}
  assert files['mimetype']==b'application/epub+zip'
  opf=files['EPUB/package.opf'].decode('utf8')
- assert '<item id="cover"' not in opf
- opf=opf.replace('</manifest>','<item id="cover" href="images/cover.png" media-type="image/png" properties="cover-image"/></manifest>')
+ if '<item id="cover"' not in opf:
+  opf=opf.replace('</manifest>','<item id="cover" href="images/cover.png" media-type="image/png" properties="cover-image"/></manifest>')
  files['EPUB/package.opf']=opf.encode('utf8')
  files['EPUB/images/cover.png']=image
  temp=path.with_suffix('.new.epub')
@@ -81,12 +81,12 @@ def cover_epub(path,image):
   assert z.testzip() is None and z.namelist()[0]=='mimetype'
  return files['EPUB/text/book.xhtml']
 
-def mobile_pdf(xhtml,cover_png,path):
+def mobile_pdf(xhtml,cover_png,path,lang):
  with tempfile.TemporaryDirectory() as d:
   root=Path(d);text=root/'EPUB/text';style=root/'EPUB/styles'
   text.mkdir(parents=True);style.mkdir()
   (text/'book.xhtml').write_bytes(xhtml);(style/'book.css').write_text('')
-  content=HTML(filename=str(text/'book.xhtml')).write_pdf(stylesheets=[CSS(string=CSS_PRINT)])
+  content=HTML(filename=str(text/'book.xhtml'), encoding='utf-8').write_pdf(stylesheets=[CSS(string=CSS_PRINT)])
   (root/'cover.png').write_bytes(cover_png)
   front=HTML(string='<html><body><img src="cover.png"/></body></html>',base_url=str(root)).write_pdf(
    stylesheets=[CSS(string='@page{size:90mm 160mm;margin:0}html,body{padding:0;margin:0}img{width:90mm;height:160mm}')])
@@ -94,6 +94,8 @@ def mobile_pdf(xhtml,cover_png,path):
   with path.open('wb') as f:writer.write(f)
  p=PdfReader(str(path),strict=True)
  if len(p.pages)<40:raise ValueError('Insufficient pages for complete manuscript')
+ if lang=='ru' and 'Бессознательное' not in ''.join((page.extract_text() or '') for page in p.pages[:5]):
+  raise ValueError('Cyrillic PDF text is not decoded correctly; check UTF-8 encoding')
  for n,page in enumerate(p.pages,1):
   w=float(page.mediabox.width)*25.4/72;h=float(page.mediabox.height)*25.4/72
   if abs(w-90)>.05 or abs(h-160)>.05:raise ValueError(f'Non-mobile PDF page {n}: {w}x{h}')
@@ -103,7 +105,12 @@ def main():
  cat=json.loads((ROOT/'catalog.json').read_text(encoding='utf8'))
  gal=json.loads((ROOT/'gallery/books.json').read_text(encoding='utf8'))
  mob=json.loads((ROOT/'mobile-readers.json').read_text(encoding='utf8'))
- if any(b['id']==SLUG for b in cat['books']):raise ValueError('Existing publication must not be overwritten')
+ existing=[b for b in cat['books'] if b['id']==SLUG]
+ if existing and existing != [BOOK]:raise ValueError('Existing publication metadata differs; refuse overwrite')
+ if existing:
+  cat['books']=[b for b in cat['books'] if b['id']!=SLUG]
+  gal=[b for b in gal if b['id']!=SLUG]
+  mob['editions']=[e for e in mob['editions'] if not e['relative_path'].startswith(DIR.as_posix()+'/')]
  for lang in ('en','ru'):
   stem=BOOK['file_stems'][lang]
   epub=ROOT/DIR/(stem+'.epub')
@@ -111,7 +118,7 @@ def main():
   pic=cover(lang);pic_name=f'unconscious-programming-{lang}.png'
   (ROOT/COV/pic_name).write_bytes(pic)
   xhtml=cover_epub(epub,pic)
-  pdf=epub.with_suffix('.pdf');pages=mobile_pdf(xhtml,pic,pdf);data=pdf.read_bytes()
+  pdf=epub.with_suffix('.pdf');pages=mobile_pdf(xhtml,pic,pdf,lang);data=pdf.read_bytes()
   print(lang,pages,'90x160 mm pages',len(data),'bytes')
   mob['editions'].append({'relative_path':(DIR/(stem+'.pdf')).as_posix(),
     'language':lang,'pages':pages,'pdf_sha256':hashlib.sha256(data).hexdigest(),
