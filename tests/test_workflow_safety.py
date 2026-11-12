@@ -73,32 +73,21 @@ class WorkflowSafetyTests(unittest.TestCase):
                     seen.add(action)
         self.assertEqual(seen, set(PINNED_ACTIONS))
 
-    def test_branch_writer_is_serial_and_scoped(self):
+    def test_privileged_book_writer_is_disabled(self):
         doc = workflow('build-unconscious.yml')
-        self.assertEqual(doc['concurrency']['cancel-in-progress'], 'false')
-        self.assertIn('github.ref', doc['concurrency']['group'])
-        self.assertIn("github.ref == 'refs/heads/publish-unconscious-programming'", doc['jobs']['build']['if'])
-        self.assertNotIn('workflow_dispatch', doc['on'])
+        self.assertIn('workflow_dispatch', doc['on'])
+        self.assertEqual(doc['permissions'], {'contents': 'read'})
+        self.assertEqual(set(doc['jobs']), {'security-hold'})
+        self.assertNotIn('push', doc['on'])
 
-    def test_unchanged_book_build_succeeds_without_commit_or_push(self):
-        steps = workflow('build-unconscious.yml')['jobs']['build']['steps']
-        script = next(step['run'] for step in steps if step.get('name', '').startswith('Commit approved'))
-        with tempfile.TemporaryDirectory() as d:
-            root = Path(d)
-            fake_git = root / 'git'
-            fake_git.write_text('#!/bin/sh\nprintf "%s\\n" "$*" >> "$GIT_TEST_LOG"\n'
-                                'if [ "$1" = diff ]; then exit "$GIT_DIFF_STATUS"; fi\nexit 0\n')
-            fake_git.chmod(0o755)
-            for changed in (False, True):
-                log = root / ('changed' if changed else 'unchanged')
-                env = {**os.environ, 'PATH': str(root) + os.pathsep + os.environ['PATH'],
-                       'GIT_TEST_LOG': str(log), 'GIT_DIFF_STATUS': '1' if changed else '0',
-                       'GITHUB_REF_NAME': 'publish-unconscious-programming'}
-                result = subprocess.run(['bash', '-e', '-o', 'pipefail', '-c', script], env=env, capture_output=True, text=True)
-                self.assertEqual(result.returncode, 0, result.stderr)
-                lines = log.read_text().splitlines()
-                self.assertEqual(any(line.startswith('commit ') for line in lines), changed)
-                self.assertEqual(any(line.startswith('push ') for line in lines), changed)
+    def test_no_repository_pushes_from_publication_jobs(self):
+        for filename in ('build-unconscious.yml', 'publish.yml'):
+            for job in workflow(filename)['jobs'].values():
+                for step in job['steps']:
+                    script = step.get('run', '')
+                    self.assertNotIn('git push', script)
+                    self.assertNotIn('git commit', script)
+                    self.assertNotIn('secrets.', script)
 
     def test_all_workflow_shell_blocks_parse(self):
         for file in (ROOT / '.github/workflows').glob('*.yml'):
