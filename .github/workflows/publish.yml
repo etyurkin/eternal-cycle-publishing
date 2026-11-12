@@ -43,13 +43,13 @@ jobs:
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
     outputs:
       built_sha: ${{ steps.commit.outputs.built_sha }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          persist-credentials: true
+          persist-credentials: false
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: '3.12'
@@ -75,18 +75,9 @@ jobs:
         run: python scripts/build_gallery.py --output _site
       - name: Preserve existing Pages downloads and pin new readers to GitHub
         run: python scripts/prepare_pages_artifact.py --site _site
-      - name: Commit generated catalogue and gallery files if changed
+      - name: Record source commit without writing to repository
         id: commit
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add catalog.json mobile-readers.json gallery/books.json gallery/assets/covers \
-            books README.md README.en.md README.ru.md reader-files.sha256
-          if ! git diff --cached --quiet; then
-            git commit -m "chore: sync approved readers and bilingual gallery"
-            git push origin HEAD:main
-          fi
-          echo "built_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+        run: echo "built_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - name: Package validated gallery for GitHub Pages
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
