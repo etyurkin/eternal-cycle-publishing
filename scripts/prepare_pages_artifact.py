@@ -102,7 +102,13 @@ def prepare(source, site, manifest=None, base='/eternal-cycle-publishing/'):
     omitted = set(remote) | set(remote_covers)
     pages = {}
     seen = set()
-    for rel in PAGES:
+    detail_pages = []
+    if (site / 'editions').exists():
+        for card in cards:
+            if not re.fullmatch(r'[a-zA-Z0-9_-]+', card['id']) or card['language'] not in ('en', 'ru'):
+                raise ValueError('Unsafe edition path')
+            detail_pages.append('editions/'+card['id']+'/'+card['language']+'/index.html')
+    for rel in (*PAGES, *detail_pages):
         content = checked_file(site, rel).read_text()
         parser = Links()
         parser.feed(content)
