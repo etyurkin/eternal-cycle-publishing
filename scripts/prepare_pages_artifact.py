@@ -108,7 +108,10 @@ def prepare(source, site, manifest=None, base='/eternal-cycle-publishing/'):
             if not re.fullmatch(r'[a-zA-Z0-9_-]+', card['id']) or card['language'] not in ('en', 'ru'):
                 raise ValueError('Unsafe edition path')
             detail_pages.append('editions/'+card['id']+'/'+card['language']+'/index.html')
-    for rel in (*PAGES, *detail_pages):
+    reading_pages = ('recommended/index.html', 'ru/recommended/index.html')
+    if not any((site / rel).exists() for rel in reading_pages):
+        reading_pages = ()  # Retain compatibility with older built artifacts.
+    for rel in (*PAGES, *detail_pages, *reading_pages):
         content = checked_file(site, rel).read_text()
         parser = Links()
         parser.feed(content)

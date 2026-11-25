@@ -30,7 +30,7 @@ class GalleryTests(unittest.TestCase):
   with tempfile.TemporaryDirectory() as d:
    out=Path(d)/'site';expected=build(SOURCE,out,'/eternal-cycle-publishing/')
    data=json.loads((ROOT/'gallery/books.json').read_text())
-   self.assertEqual(expected,{str(p.relative_to(out)) for p in out.rglob('*') if p.is_file()});self.assertEqual(len(expected),sum(len(b['files'])+2 for b in data)+5)
+   self.assertEqual(expected,{str(p.relative_to(out)) for p in out.rglob('*') if p.is_file()});self.assertEqual(len(expected),sum(len(b["files"])+2 for b in data)+7)
    for language,rel in (('en','index.html'),('en','en/index.html'),('ru','ru/index.html')):
     count=sum(b['language']==language for b in data)
     text=(out/rel).read_text();self.assertIn(f'<html lang="{language}">',text)
@@ -53,6 +53,27 @@ class GalleryTests(unittest.TestCase):
       self.assertTrue(target.is_file(),url)
    self.assertEqual((out/'index.html').read_bytes(),(out/'en/index.html').read_bytes())
    for name in ('README.md','catalog.json','books.json','research','.git','.github'):self.assertFalse((out/name).exists())
+ def test_recommendations_are_localized_and_external_only(self):
+  base='/eternal-cycle-publishing/'
+  with tempfile.TemporaryDirectory() as d:
+   out=Path(d)/'site'
+   build(SOURCE,out,base)
+   for lang,hall,path,title,other in (
+    ('en','index.html','recommended/','Kindred Spirits','ru/recommended/'),
+    ('ru','ru/index.html','ru/recommended/','Единомышленники','recommended/'),
+   ):
+    self.assertIn(f'href="{base+path}">{title}</a>',(out/hall).read_text())
+    page=(out/path/'index.html').read_text()
+    self.assertIn(f'<html lang="{lang}">',page)
+    self.assertIn(f'href="{base+other}"',page)
+    self.assertIn('id="fiction"',page)
+    self.assertIn('id="technical"',page)
+    self.assertLess(page.index('id="hitchhikers-guide"'),page.index('id="paradigms-of-ai-programming"'))
+    p=Links();p.feed(page)
+    self.assertEqual((p.cards,p.images),(3,3))
+    self.assertEqual(sum(url.startswith('https://') for url in p.urls if url != 'https://github.com/etyurkin/eternal-cycle-publishing'),9)
+    self.assertNotRegex(page, r'<a\b[^>]*\sdownload(?:[\s=>])')
+    self.assertFalse(any('/books/' in url and url.startswith(base) for url in p.urls))
  def test_full_publisher_name_in_both_headers(self):
   books=json.loads((ROOT/'gallery/books.json').read_text())
   for language,label in (('en','Book gallery'),('ru','Книжная галерея')):
