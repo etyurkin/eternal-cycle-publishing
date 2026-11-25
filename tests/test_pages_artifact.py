@@ -59,8 +59,11 @@ class PagesArtifactTests(unittest.TestCase):
             self.assertEqual(result['pinned_remote_readers'], 12)
             self.assertEqual(result['removed_binary_bytes'], 28253887)
             self.assertEqual(set(before) - set(after), remote | covers)
-            self.assertEqual(len(after), 109)
-            for rel in set(after) - set(PAGES):
+            cards = json.loads((ROOT / 'gallery/books.json').read_text())
+            details = {'editions/'+c['id']+'/'+c['language']+'/index.html' for c in cards}
+            self.assertEqual(len(after), 109 + len(details))
+            self.assertTrue(details.issubset(after))
+            for rel in set(after) - set(PAGES) - details:
                 self.assertEqual(after[rel], before[rel])
             for rel in config['preserve_pages']:
                 self.assertEqual(after[rel], before[rel])
@@ -68,10 +71,10 @@ class PagesArtifactTests(unittest.TestCase):
                 self.assertEqual(hashlib.sha256((ROOT / rel).read_bytes()).hexdigest(), digest)
             raw = 'https://raw.githubusercontent.com/' + REPOSITORY + '/' + config['revision'] + '/'
             seen = set()
-            for rel in PAGES:
+            for rel in (*PAGES, *sorted(details)):
                 text = (site / rel).read_text()
                 self.assertIn('<span>Eternal Cycle Publishing</span>', text)
-                self.assertEqual(text.count('<article '), 17 if rel.startswith('ru/') else 15)
+                self.assertEqual(text.count('<article '), 1 if rel in details else (17 if rel.startswith('ru/') else 15))
                 parser = Links()
                 parser.feed(text)
                 for url in parser.urls:
