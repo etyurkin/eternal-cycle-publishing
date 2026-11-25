@@ -4,6 +4,7 @@ from pathlib import Path
 import argparse,json,shutil,html,hashlib,zipfile
 from urllib.parse import quote
 from catalog_common import load_catalog
+import recommendations
 ROOT=Path(__file__).resolve().parents[1]
 def esc(v):return html.escape(str(v),quote=True)
 def safe(root,rel):
@@ -38,7 +39,7 @@ def book_page(b):
  if not re.fullmatch(r'[a-zA-Z0-9_-]+',b['id']) or b['language'] not in ('en','ru'):raise ValueError('Unsafe book page')
  return 'editions/'+b['id']+'/'+b['language']+'/index.html'
 
-def render(lang,books,source,base,detail=None):
+def render(lang,books,source,base,detail=None,reading=None):
  ru=lang=='ru';label='Русский зал' if ru else 'English hall';title='Книги, к которым<br>хочется вернуться.' if ru else 'Books worth<br>coming back to.'
  intro='Сказки, проза и заметки о технологиях. Выберите обложку и найдите свою историю. Все PDF подготовлены для чтения с телефона.' if ru else 'Fairy tales, prose, and notes on technology. Find a story behind a cover. Every PDF is laid out for reading on your phone.'
  cards=[]
@@ -57,8 +58,22 @@ def render(lang,books,source,base,detail=None):
  canonical=base+book_page(detail).removesuffix('index.html') if detail else base+('ru/' if ru else '')
  if detail:
   intro=detail['description'];title=esc(detail['title']);label='Книга' if ru else 'Book'
- page_title=esc(detail['title']) if detail else label
- return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{esc(intro)}"><meta name="theme-color" content="#f7f0e5"><title>{page_title} · Eternal Cycle Publishing</title><link rel="stylesheet" href="{base}assets/gallery.css"><link rel="canonical" href="{canonical}"><link rel="alternate" hreflang="en" href="{base}"><link rel="alternate" hreflang="ru" href="{base}ru/"><link rel="alternate" hreflang="x-default" href="{base}"></head><body><a class="skip" href="#collection">{'К книгам' if ru else 'Skip to books'}</a><header><div class="shell masthead"><a class="brand" href="{base}"><span>Eternal Cycle Publishing</span><small>{'Книжная галерея' if ru else 'Book gallery'}</small></a><nav aria-label="{'Язык книг' if ru else 'Book language'}"><a href="{base}" lang="en" {'' if ru else 'aria-current="page"'}>English</a><a href="{base}ru/" lang="ru" {'aria-current="page"' if ru else ''}>Русский</a></nav></div></header><main class="shell"><section class="intro"><div class="eyebrow">{'Открытая книжная галерея' if ru else 'An open book gallery'} · 2026</div><h1>{title}</h1><p>{intro}</p></section><section id="collection" aria-labelledby="hall-title"><div class="hall-bar"><h2 id="hall-title">{label}</h2><span class="count">{len(cards)} {'изданий' if ru else 'editions'} · PDF / EPUB / ZIP</span></div>{''.join(cards)}</section></main><footer><div class="shell"><span>© 2026 {'Евгений Тюркин · Вечный цикл' if ru else 'Evgeniy Tyurkin · Eternal Cycle Publishing'}</span><a href="https://github.com/etyurkin/eternal-cycle-publishing">{'Исходный каталог на GitHub' if ru else 'Source catalogue on GitHub'}</a></div><div class="shell rights">{'Бесплатное скачивание не означает разрешения на коммерческое переиздание.' if ru else 'Free downloads do not grant commercial republication rights.'}</div></footer></body></html>'''
+ hall_paths={'en':'','ru':'ru/'}
+ language_paths=hall_paths
+ reading_label='Единомышленники' if ru else 'Kindred Spirits'
+ reading_path=base+recommendations.PATHS[lang]
+ if reading is not None:
+  language_paths=recommendations.PATHS
+  canonical=reading_path;title=reading_label
+  intro=('Художественная и техническая литература, которую мы рекомендуем.' if ru
+         else 'Recommended reading: fiction and technical books worth exploring.')
+  collection=recommendations.render(lang,reading)
+ else:
+  collection=f'<div class="hall-bar"><h2 id="hall-title">{label}</h2><span class="count">{len(cards)} {"изданий" if ru else "editions"} · PDF / EPUB / ZIP</span></div>{"".join(cards)}'
+ page_title=esc(detail['title']) if detail else title if reading is not None else label
+ reading_nav=(f'<a href="{base+hall_paths[lang]}">{"Книжный зал" if ru else "Book hall"}</a>'
+              if reading is not None else f'<a href="{reading_path}">{reading_label}</a>')
+ return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{esc(intro)}"><meta name="theme-color" content="#f7f0e5"><title>{page_title} · Eternal Cycle Publishing</title><link rel="stylesheet" href="{base}assets/gallery.css"><link rel="canonical" href="{canonical}"><link rel="alternate" hreflang="en" href="{base+language_paths["en"]}"><link rel="alternate" hreflang="ru" href="{base+language_paths["ru"]}"><link rel="alternate" hreflang="x-default" href="{base+language_paths["en"]}"></head><body><a class="skip" href="#collection">{'К книгам' if ru else 'Skip to books'}</a><header><div class="shell masthead"><a class="brand" href="{base}"><span>Eternal Cycle Publishing</span><small>{'Книжная галерея' if ru else 'Book gallery'}</small></a><nav aria-label="{'Язык книг' if ru else 'Book language'}"><a href="{base+language_paths["en"]}" lang="en" {'' if ru else 'aria-current="page"'}>English</a><a href="{base+language_paths["ru"]}" lang="ru" {'aria-current="page"' if ru else ''}>Русский</a>{reading_nav}</nav></div></header><main class="shell"><section class="intro"><div class="eyebrow">{'Открытая книжная галерея' if ru else 'An open book gallery'} · 2026</div><h1>{title}</h1><p>{intro}</p></section><div id="collection">{collection}</div></main><footer><div class="shell"><span>© 2026 {'Евгений Тюркин · Вечный цикл' if ru else 'Evgeniy Tyurkin · Eternal Cycle Publishing'}</span><a href="https://github.com/etyurkin/eternal-cycle-publishing">{'Исходный каталог на GitHub' if ru else 'Source catalogue on GitHub'}</a></div><div class="shell rights">{'Бесплатное скачивание не означает разрешения на коммерческое переиздание.' if ru else 'Free downloads do not grant commercial republication rights.'}</div></footer></body></html>'''
 
 def build(source,output,base):
  source=source.resolve()
@@ -89,7 +104,9 @@ def build(source,output,base):
   copies[b['cover']]=safe(ROOT/'gallery',b['cover'])
  expected_pairs=set(latest)
  if pairs!=expected_pairs:raise ValueError('Gallery must represent every approved language edition')
- expected=set(copies)|{'index.html','en/index.html','ru/index.html','.nojekyll'}|{book_page(b) for b in books}
+ reading=recommendations.load(ROOT/'gallery/recommendations.json')
+ reading_pages={lang:path+'index.html' for lang,path in recommendations.PATHS.items()}
+ expected=set(copies)|set(reading_pages.values())|{'index.html','en/index.html','ru/index.html','.nojekyll'}|{book_page(b) for b in books}
  if output.exists():
   if any(p.is_symlink() for p in output.rglob('*')):raise ValueError('Symlink inside output')
   extras={str(p.relative_to(output)) for p in output.rglob('*') if p.is_file()}-expected
@@ -103,6 +120,8 @@ def build(source,output,base):
   target=output/rel;target.parent.mkdir(parents=True,exist_ok=True);target.write_text(render(lang,books,source,base),encoding='utf-8')
  for b in books:
   target=output/book_page(b);target.parent.mkdir(parents=True,exist_ok=True);target.write_text(render(b['language'],[b],source,base,detail=b),encoding='utf-8')
+ for lang,rel in reading_pages.items():
+  target=output/rel;target.parent.mkdir(parents=True,exist_ok=True);target.write_text(render(lang,[],source,base,reading=reading),encoding='utf-8')
  (output/'.nojekyll').touch()
  print(f'Built {len(books)} editions / {len({b["id"] for b in books})} volumes; {len(expected)} allowlisted files → {output}')
  return expected

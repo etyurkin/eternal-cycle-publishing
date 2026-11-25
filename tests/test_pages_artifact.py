@@ -61,7 +61,7 @@ class PagesArtifactTests(unittest.TestCase):
             self.assertEqual(set(before) - set(after), remote | covers)
             cards = json.loads((ROOT / 'gallery/books.json').read_text())
             details = {'editions/'+c['id']+'/'+c['language']+'/index.html' for c in cards}
-            self.assertEqual(len(after), 109 + len(details))
+            self.assertEqual(len(after), 111 + len(details))
             self.assertTrue(details.issubset(after))
             for rel in set(after) - set(PAGES) - details:
                 self.assertEqual(after[rel], before[rel])

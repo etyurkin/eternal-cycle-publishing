@@ -1,0 +1,89 @@
+[
+  {
+    "id": "hitchhikers-guide",
+    "category": "fiction",
+    "title": {
+      "en": "The Hitchhiker’s Guide to the Galaxy",
+      "ru": "Автостопом по галактике"
+    },
+    "author": {
+      "en": "Douglas Adams",
+      "ru": "Дуглас Адамс"
+    },
+    "description": {
+      "en": "Arthur Dent is trying to save his house when he learns that Earth is about to go the same way. A kindred book for the Absurdity Factory: even the end of the world is just paperwork to someone.",
+      "ru": "Артур Дент пытается спасти свой дом и узнаёт, что Землю ждёт та же участь. Родственная «Фабрике Абсурдов» книга: даже конец света для кого-то всего лишь бумажная работа."
+    },
+    "cover": "https://images.penguinrandomhouse.com/cover/9780345391803",
+    "links": [
+      {
+        "en": "Publisher · print",
+        "ru": "Издатель · бумажная книга",
+        "url": "https://www.penguinrandomhouseretail.com/book/?isbn=9780345391803"
+      },
+      {
+        "en": "Apple Books · ebook",
+        "ru": "Apple Books · электронная книга",
+        "url": "https://books.apple.com/ca/book/the-hitchhikers-guide-to-the-galaxy/id374529255"
+      }
+    ]
+  },
+  {
+    "id": "paradigms-of-ai-programming",
+    "category": "technical",
+    "title": {
+      "en": "Paradigms of Artificial Intelligence Programming",
+      "ru": "Paradigms of Artificial Intelligence Programming"
+    },
+    "author": {
+      "en": "Peter Norvig",
+      "ru": "Питер Норвиг"
+    },
+    "description": {
+      "en": "Build ELIZA, search procedures, and logic programs in Common Lisp. An unusually hands-on way to see how symbolic AI works, one program at a time.",
+      "ru": "Диалоговая программа ELIZA, алгоритмы поиска и логические программы на Common Lisp. Хороший способ разобраться в символическом ИИ: собрать программу и посмотреть, как она рассуждает."
+    },
+    "cover": "https://raw.githubusercontent.com/norvig/paip-lisp/main/paip-cover.png",
+    "links": [
+      {
+        "en": "Read in the author’s repository",
+        "ru": "Читать у автора",
+        "url": "https://github.com/norvig/paip-lisp"
+      },
+      {
+        "en": "Publisher",
+        "ru": "Издатель",
+        "url": "https://shop.elsevier.com/books/paradigms-of-artificial-intelligence-programming/norvig/978-0-08-057115-7"
+      }
+    ]
+  },
+  {
+    "id": "common-lisp-modules",
+    "category": "technical",
+    "title": {
+      "en": "Common LISP Modules",
+      "ru": "Common LISP Modules"
+    },
+    "author": {
+      "en": "Mark Watson",
+      "ru": "Марк Уотсон"
+    },
+    "description": {
+      "en": "A 1991 book that builds early neural networks in Common Lisp. Start with the Hopfield network for pattern recognition, then see how the book tackles speech and handwriting.",
+      "ru": "Книга 1991 года о ранних нейросетях на Common Lisp. Начать можно с сети Хопфилда для распознавания образов, а затем посмотреть, как автор подходит к распознаванию речи и почерка."
+    },
+    "cover": "https://media.springernature.com/full/springer-static/cover-hires/book/978-1-4612-3186-8",
+    "links": [
+      {
+        "en": "Publisher · Springer",
+        "ru": "Издатель · Springer",
+        "url": "https://link.springer.com/book/10.1007/978-1-4612-3186-8"
+      },
+      {
+        "en": "Hopfield chapter preview",
+        "ru": "О главе про сеть Хопфилда",
+        "url": "https://link.springer.com/chapter/10.1007/978-1-4612-3186-8_4"
+      }
+    ]
+  }
+]
