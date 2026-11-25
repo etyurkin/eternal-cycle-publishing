@@ -11,7 +11,7 @@ CATEGORIES = {
 }
 COVER_HOSTS = {'images.penguinrandomhouse.com', 'raw.githubusercontent.com', 'media.springernature.com'}
 LINK_HOSTS = {'www.penguinrandomhouseretail.com', 'books.apple.com', 'github.com',
-              'shop.elsevier.com', 'link.springer.com'}
+              'www.norvig.com', 'link.springer.com'}
 
 def validate_url(value, hosts):
     url = urlsplit(value)

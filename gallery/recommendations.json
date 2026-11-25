@@ -51,9 +51,9 @@
         "url": "https://github.com/norvig/paip-lisp"
       },
       {
-        "en": "Publisher",
-        "ru": "Издатель",
-        "url": "https://shop.elsevier.com/books/paradigms-of-artificial-intelligence-programming/norvig/978-0-08-057115-7"
+        "en": "Author’s notes and contents",
+        "ru": "Заметки автора и оглавление",
+        "url": "https://www.norvig.com/httpsecure/www/htdocs/paip.html"
       }
     ]
   },
