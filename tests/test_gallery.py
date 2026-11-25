@@ -30,11 +30,22 @@ class GalleryTests(unittest.TestCase):
   with tempfile.TemporaryDirectory() as d:
    out=Path(d)/'site';expected=build(SOURCE,out,'/eternal-cycle-publishing/')
    data=json.loads((ROOT/'gallery/books.json').read_text())
-   self.assertEqual(expected,{str(p.relative_to(out)) for p in out.rglob('*') if p.is_file()});self.assertEqual(len(expected),sum(len(b['files'])+1 for b in data)+5)
+   self.assertEqual(expected,{str(p.relative_to(out)) for p in out.rglob('*') if p.is_file()});self.assertEqual(len(expected),sum(len(b['files'])+2 for b in data)+5)
    for language,rel in (('en','index.html'),('en','en/index.html'),('ru','ru/index.html')):
     count=sum(b['language']==language for b in data)
     text=(out/rel).read_text();self.assertIn(f'<html lang="{language}">',text)
     p=Links();p.feed(text);self.assertEqual(p.cards,count);self.assertEqual(p.images,count)
+    for url in p.urls:
+     if url.startswith('/eternal-cycle-publishing/'):
+      target=out/unquote(url.removeprefix('/eternal-cycle-publishing/'))
+      if target.is_dir():target/='index.html'
+      self.assertTrue(target.is_file(),url)
+   for b in data:
+    rel='editions/'+b['id']+'/'+b['language']+'/index.html'
+    page=(out/rel).read_text()
+    p=Links();p.feed(page);self.assertEqual(p.cards,1)
+    for path in b['files'].values():
+     self.assertTrue(any(unquote(url).endswith(path) for url in p.urls))
     for url in p.urls:
      if url.startswith('/eternal-cycle-publishing/'):
       target=out/unquote(url.removeprefix('/eternal-cycle-publishing/'))

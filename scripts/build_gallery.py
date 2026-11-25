@@ -33,7 +33,12 @@ def verify_provenance(source,book):
   if kind=='epub' and (cover['member'] not in archive.namelist() or hashlib.sha256(archive.read(cover['member'])).hexdigest()!=cover['sha256']):raise ValueError('Cover source hash mismatch')
   if any(chapter not in archive.namelist() for chapter in description['chapters']):raise ValueError('Missing description source chapter')
 
-def render(lang,books,source,base):
+def book_page(b):
+ import re
+ if not re.fullmatch(r'[a-zA-Z0-9_-]+',b['id']) or b['language'] not in ('en','ru'):raise ValueError('Unsafe book page')
+ return 'editions/'+b['id']+'/'+b['language']+'/index.html'
+
+def render(lang,books,source,base,detail=None):
  ru=lang=='ru';label='Русский зал' if ru else 'English hall';title='Книги, к которым<br>хочется вернуться.' if ru else 'Books worth<br>coming back to.'
  intro='Сказки, проза и заметки о технологиях. Выберите обложку и найдите свою историю. Все PDF подготовлены для чтения с телефона.' if ru else 'Fairy tales, prose, and notes on technology. Find a story behind a cover. Every PDF is laid out for reading on your phone.'
  cards=[]
@@ -45,8 +50,15 @@ def render(lang,books,source,base):
    links.append(f'<a href="{esc(base+quote(path))}"'+(' download' if ext!='pdf' else '')+f' aria-label="{esc(name+": "+b["title"])}">{name}<small>{size:.1f} MB</small></a>')
   format_note='EPUB — для приложения-читалки' if ru else 'EPUB for your reading app'
   if 'zip' in b['files']:format_note+=' · ZIP — комплект файлов' if ru else ' · ZIP for the file bundle'
-  cards.append(f'''<article class="book" id="{esc(b['id'])}"><figure class="frame"><a href="{esc(base+quote(b['files']['pdf']))}" aria-label="{esc(('Читать: ' if ru else 'Read: ')+b['title'])}"><img src="{esc(base+b['cover'])}" alt="{esc(('Обложка: ' if ru else 'Cover: ')+b['title'])}" width="660" height="990" loading="lazy" decoding="async"></a></figure><div><p class="index">{i:02d} / {esc(b['note'])}</p><h3>{esc(b['title'])}</h3><p class="description">{esc(b['description'])}</p><div class="downloads">{''.join(links)}</div><p class="format-note">{format_note}</p></div></article>''')
- return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{esc(intro)}"><meta name="theme-color" content="#f7f0e5"><title>{label} · Eternal Cycle Publishing</title><link rel="stylesheet" href="{base}assets/gallery.css"><link rel="canonical" href="{base + ('ru/' if ru else '')}"><link rel="alternate" hreflang="en" href="{base}"><link rel="alternate" hreflang="ru" href="{base}ru/"><link rel="alternate" hreflang="x-default" href="{base}"></head><body><a class="skip" href="#collection">{'К книгам' if ru else 'Skip to books'}</a><header><div class="shell masthead"><a class="brand" href="{base}"><span>Eternal Cycle Publishing</span><small>{'Книжная галерея' if ru else 'Book gallery'}</small></a><nav aria-label="{'Язык книг' if ru else 'Book language'}"><a href="{base}" lang="en" {'' if ru else 'aria-current="page"'}>English</a><a href="{base}ru/" lang="ru" {'aria-current="page"' if ru else ''}>Русский</a></nav></div></header><main class="shell"><section class="intro"><div class="eyebrow">{'Открытая книжная галерея' if ru else 'An open book gallery'} · 2026</div><h1>{title}</h1><p>{intro}</p></section><section id="collection" aria-labelledby="hall-title"><div class="hall-bar"><h2 id="hall-title">{label}</h2><span class="count">{len(cards)} {'изданий' if ru else 'editions'} · PDF / EPUB / ZIP</span></div>{''.join(cards)}</section></main><footer><div class="shell"><span>© 2026 {'Евгений Тюркин · Вечный цикл' if ru else 'Evgeniy Tyurkin · Eternal Cycle Publishing'}</span><a href="https://github.com/etyurkin/eternal-cycle-publishing">{'Исходный каталог на GitHub' if ru else 'Source catalogue on GitHub'}</a></div><div class="shell rights">{'Бесплатное скачивание не означает разрешения на коммерческое переиздание.' if ru else 'Free downloads do not grant commercial republication rights.'}</div></footer></body></html>'''
+  page_url=base+book_page(b).removesuffix('index.html')
+  cover_url=base+quote(b['files']['pdf']) if detail else page_url
+  more='' if detail else f'<p><a href="{esc(page_url)}">{"Страница книги" if ru else "Book page"}</a></p>'
+  cards.append(f'''<article class="book" id="{esc(b['id'])}"><figure class="frame"><a href="{esc(cover_url)}" aria-label="{esc(('Читать: ' if ru else 'Read: ')+b['title'])}"><img src="{esc(base+b['cover'])}" alt="{esc(('Обложка: ' if ru else 'Cover: ')+b['title'])}" width="660" height="990" loading="lazy" decoding="async"></a></figure><div><p class="index">{i:02d} / {esc(b['note'])}</p><h3>{esc(b['title'])}</h3><p class="description">{esc(b['description'])}</p><div class="downloads">{''.join(links)}</div><p class="format-note">{format_note}</p>{more}</div></article>''')
+ canonical=base+book_page(detail).removesuffix('index.html') if detail else base+('ru/' if ru else '')
+ if detail:
+  intro=detail['description'];title=esc(detail['title']);label='Книга' if ru else 'Book'
+ page_title=esc(detail['title']) if detail else label
+ return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{esc(intro)}"><meta name="theme-color" content="#f7f0e5"><title>{page_title} · Eternal Cycle Publishing</title><link rel="stylesheet" href="{base}assets/gallery.css"><link rel="canonical" href="{canonical}"><link rel="alternate" hreflang="en" href="{base}"><link rel="alternate" hreflang="ru" href="{base}ru/"><link rel="alternate" hreflang="x-default" href="{base}"></head><body><a class="skip" href="#collection">{'К книгам' if ru else 'Skip to books'}</a><header><div class="shell masthead"><a class="brand" href="{base}"><span>Eternal Cycle Publishing</span><small>{'Книжная галерея' if ru else 'Book gallery'}</small></a><nav aria-label="{'Язык книг' if ru else 'Book language'}"><a href="{base}" lang="en" {'' if ru else 'aria-current="page"'}>English</a><a href="{base}ru/" lang="ru" {'aria-current="page"' if ru else ''}>Русский</a></nav></div></header><main class="shell"><section class="intro"><div class="eyebrow">{'Открытая книжная галерея' if ru else 'An open book gallery'} · 2026</div><h1>{title}</h1><p>{intro}</p></section><section id="collection" aria-labelledby="hall-title"><div class="hall-bar"><h2 id="hall-title">{label}</h2><span class="count">{len(cards)} {'изданий' if ru else 'editions'} · PDF / EPUB / ZIP</span></div>{''.join(cards)}</section></main><footer><div class="shell"><span>© 2026 {'Евгений Тюркин · Вечный цикл' if ru else 'Evgeniy Tyurkin · Eternal Cycle Publishing'}</span><a href="https://github.com/etyurkin/eternal-cycle-publishing">{'Исходный каталог на GitHub' if ru else 'Source catalogue on GitHub'}</a></div><div class="shell rights">{'Бесплатное скачивание не означает разрешения на коммерческое переиздание.' if ru else 'Free downloads do not grant commercial republication rights.'}</div></footer></body></html>'''
 
 def build(source,output,base):
  source=source.resolve()
@@ -77,7 +89,7 @@ def build(source,output,base):
   copies[b['cover']]=safe(ROOT/'gallery',b['cover'])
  expected_pairs=set(latest)
  if pairs!=expected_pairs:raise ValueError('Gallery must represent every approved language edition')
- expected=set(copies)|{'index.html','en/index.html','ru/index.html','.nojekyll'}
+ expected=set(copies)|{'index.html','en/index.html','ru/index.html','.nojekyll'}|{book_page(b) for b in books}
  if output.exists():
   if any(p.is_symlink() for p in output.rglob('*')):raise ValueError('Symlink inside output')
   extras={str(p.relative_to(output)) for p in output.rglob('*') if p.is_file()}-expected
@@ -89,6 +101,8 @@ def build(source,output,base):
  # Retain /en/ as an English alias for previously shared links.
  for lang,rel in [('en','index.html'),('en','en/index.html'),('ru','ru/index.html')]:
   target=output/rel;target.parent.mkdir(parents=True,exist_ok=True);target.write_text(render(lang,books,source,base),encoding='utf-8')
+ for b in books:
+  target=output/book_page(b);target.parent.mkdir(parents=True,exist_ok=True);target.write_text(render(b['language'],[b],source,base,detail=b),encoding='utf-8')
  (output/'.nojekyll').touch()
  print(f'Built {len(books)} editions / {len({b["id"] for b in books})} volumes; {len(expected)} allowlisted files → {output}')
  return expected

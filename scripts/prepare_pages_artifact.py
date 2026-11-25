@@ -102,7 +102,7 @@ def prepare(source, site, manifest=None, base='/eternal-cycle-publishing/'):
     omitted = set(remote) | set(remote_covers)
     pages = {}
     seen = set()
-    for rel in PAGES:
+    for rel in (*PAGES, *('editions/'+card['id']+'/'+card['language']+'/index.html' for card in cards if (site/'editions'/card['id']/card['language']/'index.html').is_file())):
         content = checked_file(site, rel).read_text()
         parser = Links()
         parser.feed(content)
